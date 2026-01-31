@@ -1,0 +1,95 @@
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Book', path: '/book' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-black/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="flex flex-col">
+              <span className="font-script text-2xl md:text-3xl text-white leading-tight">AL SAFIR</span>
+              <span className="font-sans text-[10px] md:text-xs text-amber-500 uppercase tracking-logo mt-0.5">Luxury Chauffeurs</span>
+            </div>
+          </Link>
+
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm uppercase tracking-logo transition-colors duration-200 ${
+                  location.pathname === link.path
+                    ? 'text-amber-500 font-semibold'
+                    : 'text-white hover:text-amber-500'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          <button
+            className="md:hidden text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-black/98 backdrop-blur-sm">
+          <div className="px-4 pt-2 pb-6 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`block py-2 text-base uppercase tracking-logo transition-colors duration-200 ${
+                  location.pathname === link.path
+                    ? 'text-amber-500 font-semibold'
+                    : 'text-white hover:text-amber-500'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
