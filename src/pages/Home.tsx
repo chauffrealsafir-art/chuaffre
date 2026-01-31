@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import heroImage from '../../assets/hero-image.jpg';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -14,7 +15,7 @@ const Home = () => {
 
   const heroSections = [
     {
-      image: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: heroImage,
       title: 'Al Safir Chauffeurs',
       subtitle: 'Driven By Excellence',
     },

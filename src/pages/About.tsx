@@ -1,4 +1,41 @@
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: 'Alexis Carter',
+    location: 'Dubai, UAE',
+    quote:
+      'Exceptional service from start to finish. The driver was punctual, the car was immaculate, and the whole experience felt truly premium. I would recommend Al Safir to anyone who values reliability and comfort.',
+    initials: 'AC',
+  },
+  {
+    name: 'Sarah Mitchell',
+    location: 'London, UK',
+    quote:
+      'We use Al Safir for all our executive transfers. Professional, discreet, and always on time. They have become an essential part of how we do business.',
+    initials: 'SM',
+  },
+  {
+    name: 'James Williams',
+    location: 'Manchester, UK',
+    quote:
+      'From airport pickups to special occasions, Al Safir never disappoints. The attention to detail and the quality of the vehicles is outstanding.',
+    initials: 'JW',
+  },
+];
+
 const About = () => {
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const current = testimonials[testimonialIndex];
+
+  const goPrev = () => {
+    setTestimonialIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
+  };
+  const goNext = () => {
+    setTestimonialIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
+  };
+
   return (
     <div className="min-h-screen bg-black pt-32 pb-20 px-4">
       <div className="max-w-4xl mx-auto">
@@ -34,6 +71,113 @@ const About = () => {
             <p className="text-white/70 text-sm tracking-wide">Client Satisfaction</p>
           </div>
         </div>
+
+        {/* How It Works */}
+        <section className="mt-24 md:mt-32 opacity-0 animate-fadeIn animation-delay-300">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 md:w-12 bg-amber-500 shrink-0" />
+            <span className="font-sans text-amber-500 text-xs md:text-sm uppercase tracking-logo font-medium">
+              How It Works
+            </span>
+          </div>
+          <h2 className="font-serif font-bold text-white text-3xl md:text-4xl mb-16">
+            How We Simplify Your Experience
+          </h2>
+
+          <div className="relative">
+            {/* Golden horizontal line */}
+            <div className="absolute top-8 left-0 right-0 h-px bg-amber-500/60 hidden md:block" aria-hidden />
+
+            <div className="grid md:grid-cols-3 gap-12 md:gap-8">
+              <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mb-6 relative z-10">
+                  <span className="font-serif font-bold text-white text-xl">1</span>
+                </div>
+                <h3 className="font-serif font-bold text-white text-xl mb-3">Choose a Vehicle</h3>
+                <p className="text-white/80 text-sm md:text-base leading-relaxed font-light">
+                  Browse our premium fleet of luxury vehicles—from executive sedans to SUVs and
+                  chauffeur-driven cars—and select the one that suits your journey and occasion.
+                </p>
+              </div>
+
+              <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mb-6 relative z-10">
+                  <span className="font-serif font-bold text-white text-xl">2</span>
+                </div>
+                <h3 className="font-serif font-bold text-white text-xl mb-3">Select a Service</h3>
+                <p className="text-white/80 text-sm md:text-base leading-relaxed font-light">
+                  Pick the service you need: airport transfers, corporate travel, events, or
+                  private hire. We tailor each booking to your schedule and requirements.
+                </p>
+              </div>
+
+              <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mb-6 relative z-10">
+                  <span className="font-serif font-bold text-white text-xl">3</span>
+                </div>
+                <h3 className="font-serif font-bold text-white text-xl mb-3">Book Your Ride</h3>
+                <p className="text-white/80 text-sm md:text-base leading-relaxed font-light">
+                  Confirm your booking online or by phone. We’ll take care of the rest—punctual
+                  pickup, professional driver, and a seamless journey from start to finish.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="mt-24 md:mt-32 opacity-0 animate-fadeIn animation-delay-400">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8 md:w-12 bg-amber-500 shrink-0" />
+                <span className="font-sans text-amber-500 text-xs md:text-sm uppercase tracking-logo font-medium">
+                  Testimonials
+                </span>
+              </div>
+              <h2 className="font-serif font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
+                See Why Customers Choose Us Every Time
+              </h2>
+              <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+                Our clients trust us for airport transfers, corporate travel, and special
+                occasions. Here’s what they have to say about their experience with Al Safir.
+              </p>
+              <div className="flex gap-4">
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  aria-label="Previous testimonial"
+                  className="btn-animate w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black shrink-0"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  aria-label="Next testimonial"
+                  className="btn-animate w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black shrink-0"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-amber-50/95 rounded-2xl p-8 md:p-10 shadow-xl border border-amber-500/10">
+              <div className="flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="w-20 h-20 rounded-full bg-amber-500/20 flex items-center justify-center mb-5 shrink-0">
+                  <span className="font-serif font-bold text-amber-700 text-xl">
+                    {current.initials}
+                  </span>
+                </div>
+                <h3 className="font-sans font-bold text-black text-xl mb-1">{current.name}</h3>
+                <p className="text-gray-600 text-sm mb-6">{current.location}</p>
+                <blockquote className="font-serif text-black/90 text-lg md:text-xl italic leading-relaxed">
+                  &ldquo;{current.quote}&rdquo;
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

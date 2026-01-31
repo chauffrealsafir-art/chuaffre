@@ -1,4 +1,5 @@
-import { Mail, Phone, Instagram, Music, MapPin } from 'lucide-react';
+import { Mail, Phone, Instagram, MapPin } from 'lucide-react';
+import TikTokIcon from '../components/TikTokIcon';
 
 const Contact = () => {
   return (
@@ -70,8 +71,8 @@ const Contact = () => {
 
           <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300 opacity-0 animate-fadeIn animation-delay-500">
             <div className="flex items-start space-x-4">
-              <div className="bg-amber-500/10 p-4 rounded-lg">
-                <Music className="text-amber-500" size={28} />
+              <div className="bg-amber-500/10 p-4 rounded-lg text-amber-500">
+                <TikTokIcon size={28} />
               </div>
               <div>
                 <h3 className="text-white font-semibold text-xl mb-2">TikTok</h3>

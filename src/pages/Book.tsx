@@ -337,7 +337,7 @@ const Book = () => {
 
             <button
               type="submit"
-              className="w-full mt-8 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-dark font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-amber-500/50"
+              className="btn-animate w-full mt-8 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-dark font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-amber-500/50"
             >
               Submit Booking Request
             </button>

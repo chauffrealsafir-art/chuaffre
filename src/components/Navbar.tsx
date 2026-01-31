@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,6 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Book', path: '/book' },
-    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -44,7 +43,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -58,6 +57,13 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <Link
+              to="/contact"
+              className="btn-animate flex items-center gap-2 border border-white rounded-full px-5 py-2.5 text-sm font-medium uppercase tracking-logo text-white hover:bg-white hover:text-black shrink-0"
+            >
+              Contact Us
+              <ArrowRight size={18} className="shrink-0" />
+            </Link>
           </div>
 
           <button
@@ -85,6 +91,13 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <Link
+              to="/contact"
+              className="btn-animate flex items-center justify-center gap-2 w-full mt-4 border border-white rounded-full px-5 py-3 text-sm font-medium uppercase tracking-logo text-white hover:bg-white hover:text-black"
+            >
+              Contact Us
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       )}

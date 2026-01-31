@@ -80,6 +80,31 @@
   .animation-delay-500 {
     animation-delay: 500ms;
   }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
+  /* Button hover/active animations */
+  .btn-animate {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease,
+      color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-animate:hover {
+    transform: scale(1.03);
+  }
+  .btn-animate:active {
+    transform: scale(0.98);
+  }
 }
 
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
