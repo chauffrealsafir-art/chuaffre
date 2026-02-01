@@ -67,8 +67,12 @@ const Navbar = () => {
           </div>
 
           <button
-            className="md:hidden text-white"
+            type="button"
+            className="md:hidden text-white p-2 -m-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -76,7 +80,12 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black/98 backdrop-blur-sm">
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-black/98 backdrop-blur-sm"
+          role="navigation"
+          aria-label="Main menu"
+        >
           <div className="px-4 pt-2 pb-6 space-y-4">
             {navLinks.map((link) => (
               <Link

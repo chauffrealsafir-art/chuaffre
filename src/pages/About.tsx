@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import PageMeta from '../components/PageMeta';
+import FadeInSection from '../components/FadeInSection';
+import Marquee from '../components/Marquee';
 
 const testimonials = [
   {
@@ -37,43 +40,137 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black pt-32 pb-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16 opacity-0 animate-fadeIn">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
-            <span className="text-white">About </span>
-            <span className="text-amber-500">Us</span>
-          </h1>
-        </div>
+    <>
+      <PageMeta
+        title="About Us - Al Safir Chauffeurs"
+        description="Learn about Al Safir Chauffeurs: London's luxury chauffeur service. Professional, discreet, and reliable transport for airport transfers, corporate travel, and special occasions."
+      />
+      <div className="min-h-screen bg-black pt-32 pb-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <FadeInSection className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
+              <span className="text-white">About </span>
+              <span className="text-amber-500">Us</span>
+            </h1>
+          </FadeInSection>
 
-        <div className="bg-gradient-to-br from-zinc-900 to-black border border-amber-500/20 rounded-lg p-8 md:p-16 shadow-2xl opacity-0 animate-fadeIn animation-delay-200">
-          <p className="text-white/90 text-lg md:text-xl leading-relaxed text-center font-light">
-            Al Safir Chauffeurs is a London-based luxury chauffeur service providing professional,
-            discreet and reliable transport across the capital. We deliver a seamless experience
-            for airport transfers, business travel, special occasions and private appointments,
-            with a focus on punctuality, comfort and high standards of service. Every journey is
-            tailored to the client, ensuring a smooth and refined travel experience from start to
-            finish.
-          </p>
-        </div>
+        {/* Our Story - intro block */}
+        <FadeInSection as="section">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 md:w-12 bg-amber-500 shrink-0" />
+            <span className="font-sans text-amber-500 text-xs md:text-sm uppercase tracking-logo font-medium">
+              Our Story
+            </span>
+          </div>
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 md:p-10 lg:p-12 hover:border-amber-500/30 transition-all duration-300">
+            <p className="text-white/90 text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto">
+              Al Safir Chauffeurs is a London-based luxury chauffeur service providing professional,
+              discreet and reliable transport across the capital.
+            </p>
+            <p className="text-white/80 text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-6">
+              We deliver a seamless experience for airport transfers, business travel, special
+              occasions and private appointments, with a focus on punctuality, comfort and high
+              standards of service. Every journey is tailored to the client, ensuring a smooth and
+              refined travel experience from start to finish.
+            </p>
+          </div>
+        </FadeInSection>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300 opacity-0 animate-fadeIn animation-delay-400">
+        <FadeInSection className="grid md:grid-cols-3 gap-8 mt-16">
+          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
             <div className="text-4xl font-bold text-amber-500 mb-2">10+</div>
             <p className="text-white/70 text-sm tracking-wide">Years Experience</p>
           </div>
-          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300 opacity-0 animate-fadeIn animation-delay-600">
+          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
             <div className="text-4xl font-bold text-amber-500 mb-2">24/7</div>
             <p className="text-white/70 text-sm tracking-wide">Available Service</p>
           </div>
-          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300 opacity-0 animate-fadeIn animation-delay-800">
+          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
             <div className="text-4xl font-bold text-amber-500 mb-2">100%</div>
             <p className="text-white/70 text-sm tracking-wide">Client Satisfaction</p>
           </div>
+        </FadeInSection>
+
+        {/* Services & Fleet */}
+        <FadeInSection as="section" className="mt-24 md:mt-32">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 md:w-12 bg-amber-500 shrink-0" />
+            <span className="font-sans text-amber-500 text-xs md:text-sm uppercase tracking-logo font-medium">
+              Services & Fleet
+            </span>
+          </div>
+          <h2 className="font-serif font-bold text-white text-3xl md:text-4xl mb-12">
+            What We Provide
+          </h2>
+
+          <div className="space-y-10">
+            <div>
+              <h3 className="font-sans text-amber-500 text-sm uppercase tracking-logo font-medium mb-6">
+                Our Services
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">Airport Transfers</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Meet-and-greet and seamless transfers to and from London airports, with flight monitoring.
+                  </p>
+                </div>
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">Corporate Travel</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Executive transport for business meetings, conferences and corporate events.
+                  </p>
+                </div>
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">Special Events</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Weddings, proms, races and occasions with a professional chauffeur and premium vehicle.
+                  </p>
+                </div>
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">Private Hire</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Hourly or daily hire for appointments, shopping or tailored itineraries across London.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-sans text-amber-500 text-sm uppercase tracking-logo font-medium mb-6">
+                Our Fleet
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-6">
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">Luxury Sedans</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    BMW, Mercedes and Rolls Royce—executive sedans with leather interior, WiFi and privacy.
+                  </p>
+                </div>
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">Executive SUVs</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Range Rover, Land Rover and premium SUVs for space, comfort and presence.
+                  </p>
+                </div>
+                <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+                  <h4 className="font-serif font-bold text-white text-lg mb-2">People Carriers</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Mercedes V Class and larger vehicles for groups and extra luggage.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+
+        {/* Luxurious service marquee - above How It Works */}
+        <div className="mt-16 md:mt-20">
+          <Marquee />
         </div>
 
         {/* How It Works */}
-        <section className="mt-24 md:mt-32 opacity-0 animate-fadeIn animation-delay-300">
+        <FadeInSection as="section" className="mt-24 md:mt-32">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 md:w-12 bg-amber-500 shrink-0" />
             <span className="font-sans text-amber-500 text-xs md:text-sm uppercase tracking-logo font-medium">
@@ -123,10 +220,10 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* Testimonials */}
-        <section className="mt-24 md:mt-32 opacity-0 animate-fadeIn animation-delay-400">
+        <FadeInSection as="section" className="mt-24 md:mt-32">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -177,9 +274,10 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
       </div>
     </div>
+    </>
   );
 };
 

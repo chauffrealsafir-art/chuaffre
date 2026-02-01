@@ -18,6 +18,22 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Focus styles for keyboard users - visible ring */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #0a0a0a, 0 0 0 4px rgb(245 158 11);
+  }
+}
+
+/* Themed select dropdown - dark background for options (where supported) */
+select option {
+  background-color: #18181b;
+  color: #fafafa;
 }
 
 @layer utilities {

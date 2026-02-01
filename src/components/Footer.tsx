@@ -53,11 +53,11 @@ const Footer = () => {
                 <TikTokIcon size={22} />
               </a>
               <a
-                href="https://instagram.com/SafirChauffeurs"
+                href="https://instagram.com/saafir_chauffeur"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-amber-500 transition-colors"
-                aria-label="Instagram"
+                aria-label="Instagram @saafir_chauffeur"
               >
                 <Instagram size={22} />
               </a>
@@ -82,8 +82,7 @@ const Footer = () => {
               {[
                 { label: 'Home', to: '/' },
                 { label: 'About', to: '/about' },
-                { label: 'Fleet', to: '/services' },
-                { label: 'Services', to: '/services' },
+                { label: 'Services & Fleet', to: '/services' },
                 { label: 'Book', to: '/book' },
                 { label: 'Contact', to: '/contact' },
               ].map(({ label, to }) => (
@@ -106,12 +105,10 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
+                'Airport Transfers',
                 'Corporate Travel',
-                'Airport Transfer',
-                'City Tour',
-                'Security Chauffeur',
-                'VIP Service',
-                'Event Chauffeur',
+                'Special Events',
+                'Private Hire',
               ].map((label) => (
                 <li key={label}>
                   <Link
@@ -165,9 +162,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center space-y-2">
           <p className="text-white/50 text-xs uppercase tracking-wide">
             &copy; {currentYear} Al Safir Chauffeurs. All rights reserved.
+          </p>
+          <p className="text-white/40 text-xs">
+            <Link to="/privacy" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
+            {' · '}
+            <Link to="/terms" className="hover:text-amber-500 transition-colors">Terms & Conditions</Link>
           </p>
         </div>
       </div>
