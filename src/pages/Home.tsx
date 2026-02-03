@@ -97,11 +97,11 @@ const Home = () => {
             }`}
           >
             <div>
-              <h1 className={`mb-4 ${index === 0 ? 'font-script text-5xl md:text-7xl lg:text-8xl text-white leading-tight' : 'font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wider'}`}>
+              <h1 className={`${index === 0 ? 'mb-1.5 font-script text-4xl md:text-6xl lg:text-7xl text-white leading-tight' : 'mb-4 font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wider'}`}>
                 {index === 0 ? (
                   <>
                     <span className="text-white">Al Safir </span>
-                    <span className="font-sans text-amber-500 uppercase tracking-logo text-4xl md:text-6xl lg:text-7xl font-medium">Chauffeurs</span>
+                    <span className="font-sans text-amber-500 uppercase tracking-logo text-3xl md:text-5xl lg:text-6xl font-medium">Chauffeurs</span>
                   </>
                 ) : (
                   section.title.split(' ').map((word, i) => (
