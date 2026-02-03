@@ -49,8 +49,11 @@ const Contact = () => {
               <div>
                 <h3 className="text-white font-semibold text-xl mb-2">Phone / WhatsApp</h3>
                 <a
-                  href="tel:+447546238066"
+                  href="https://wa.me/447546238066"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/70 hover:text-amber-500 transition-colors"
+                  aria-label="Open WhatsApp to chat with +44 7546 238066"
                 >
                   +44 (0) 7546 238066
                 </a>
@@ -136,21 +139,21 @@ const Contact = () => {
 
         {/* Ready to Begin Your Journey */}
         <FadeInSection as="section" className="mt-20 md:mt-28">
-          <div className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 text-black">
-            <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl text-center mb-8 md:mb-10">
+          <div className="bg-amber-700 rounded-3xl p-8 md:p-12 lg:p-16 text-white">
+            <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl text-center mb-8 md:mb-10 text-white">
               Ready to Begin Your Journey with Us?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 md:mb-16">
               <Link
                 to="/services"
-                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-black rounded-full px-6 py-3.5 text-sm font-medium uppercase tracking-wide text-black hover:bg-black hover:text-white transition-colors duration-200"
+                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-6 py-3.5 text-sm font-medium uppercase tracking-wide text-white hover:bg-white hover:text-black transition-colors duration-200"
               >
                 Our Services
-                <ArrowRight size={18} />
+                <ArrowRight size={18} className="text-black group-hover:text-black" />
               </Link>
               <Link
                 to="/book"
-                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-black rounded-full px-6 py-3.5 text-sm font-medium uppercase tracking-wide text-black hover:bg-black hover:text-white transition-colors duration-200"
+                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-6 py-3.5 text-sm font-medium uppercase tracking-wide text-white hover:bg-black hover:text-white border-white hover:border-black transition-colors duration-200"
               >
                 Browse Fleet
                 <ArrowRight size={18} />
@@ -158,29 +161,29 @@ const Contact = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-8 md:gap-10">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-600 mb-4">
-                  <Check size={22} strokeWidth={2.5} />
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-amber-400 mb-4">
+                  <Check size={22} strokeWidth={2.5} className="text-amber-400" />
                 </div>
-                <h3 className="font-serif font-bold text-lg md:text-xl text-black mb-2">Luxury Comfort</h3>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
+                <h3 className="font-serif font-bold text-lg md:text-xl text-white mb-2">Luxury Comfort</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed">
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
                 </p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-600 mb-4">
-                  <Check size={22} strokeWidth={2.5} />
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-amber-400 mb-4">
+                  <Check size={22} strokeWidth={2.5} className="text-amber-400" />
                 </div>
-                <h3 className="font-serif font-bold text-lg md:text-xl text-black mb-2">Reliable Service</h3>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
+                <h3 className="font-serif font-bold text-lg md:text-xl text-white mb-2">Reliable Service</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed">
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
                 </p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-600 mb-4">
-                  <Check size={22} strokeWidth={2.5} />
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-amber-400 mb-4">
+                  <Check size={22} strokeWidth={2.5} className="text-amber-400" />
                 </div>
-                <h3 className="font-serif font-bold text-lg md:text-xl text-black mb-2">Personal Travel</h3>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
+                <h3 className="font-serif font-bold text-lg md:text-xl text-white mb-2">Personal Travel</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed">
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
                 </p>
               </div>
