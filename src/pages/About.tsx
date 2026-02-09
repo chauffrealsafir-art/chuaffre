@@ -96,12 +96,12 @@ const About = () => {
           </div>
         </FadeInSection>
 
-        {/* Services & Fleet */}
+        {/* Fleet */}
         <FadeInSection as="section" className="mt-24 md:mt-32">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 md:w-12 bg-amber-500 shrink-0" />
             <span className="font-sans text-amber-500 text-xs md:text-sm uppercase tracking-logo font-medium">
-              Services & Fleet
+              Fleet
             </span>
           </div>
           <h2 className="font-serif font-bold text-white text-3xl md:text-4xl mb-12">
@@ -111,7 +111,7 @@ const About = () => {
           <div className="space-y-10">
             <div>
               <h3 className="font-sans text-amber-500 text-sm uppercase tracking-logo font-medium mb-6">
-                Our Services
+                What We Offer
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">

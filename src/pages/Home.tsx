@@ -10,7 +10,22 @@ const bannerImages = ['/banners/1.png', '/banners/2.png', '/banners/3.png', '/ba
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [exceptionalFleetInView, setExceptionalFleetInView] = useState(false);
+  const [hero0Entered, setHero0Entered] = useState(false);
   const exceptionalFleetRef = useRef<HTMLElement | null>(null);
+
+  // When landing on home (navigation or load), scroll to top so entrance animation runs from top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setScrollY(0);
+  }, []);
+
+  // Entrance animation for first hero when landing on home (full load or navigation)
+  useEffect(() => {
+    const t = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setHero0Entered(true));
+    });
+    return () => cancelAnimationFrame(t);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,21 +108,25 @@ const Home = () => {
           {/* Main text - overlaid on image, no solid black section */}
           <div
             className={`relative z-10 flex flex-1 items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 transition-all duration-1000 ${
-              index === EXCEPTIONAL_FLEET_INDEX
-                ? exceptionalFleetInView
+              index === 0
+                ? hero0Entered
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-                : scrollY > index * window.innerHeight - 200
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-10'
+                : index === EXCEPTIONAL_FLEET_INDEX
+                  ? exceptionalFleetInView
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
+                  : scrollY > index * window.innerHeight - 200
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
             }`}
           >
             <div className="w-full max-w-4xl">
-              <h1 className={`${index === 0 ? 'mb-2 sm:mb-1.5 font-script text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight px-2' : 'mb-3 sm:mb-4 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider px-2'}`}>
+              <h1 className={`mb-3 sm:mb-4 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider px-2 ${index === 2 ? 'whitespace-nowrap' : ''}`}>
                 {index === 0 ? (
                   <>
                     <span className="text-white">Al Safir </span>
-                    <span className="font-sans text-amber-500 uppercase tracking-logo text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-medium">Chauffeurs</span>
+                    <span className="text-amber-500">Chauffeurs</span>
                   </>
                 ) : (
                   section.title.split(' ').map((word, i) => (
@@ -120,7 +139,7 @@ const Home = () => {
                   ))
                 )}
               </h1>
-              <p className={`text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-sans uppercase tracking-tagline px-2 ${index === 0 ? 'text-amber-500 font-medium' : 'text-white/90 font-light'}`}>
+              <p className={`text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 ${index === 0 ? 'font-serif text-amber-500 font-medium' : 'font-sans text-white/90 font-light'}`}>
                 {section.subtitle}
               </p>
               {index === 0 && (
@@ -133,10 +152,10 @@ const Home = () => {
                     <ArrowRight size={14} className="shrink-0" />
                   </Link>
                   <Link
-                    to="/services"
+                    to="/fleet"
                     className="btn-animate inline-flex items-center gap-1.5 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-medium uppercase tracking-logo px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto justify-center"
                   >
-                    Services & Fleet
+                    Fleet
                     <ArrowRight size={14} className="shrink-0" />
                   </Link>
                 </div>

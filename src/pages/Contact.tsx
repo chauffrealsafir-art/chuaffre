@@ -109,7 +109,7 @@ const Contact = () => {
             </div>
             <div>
               <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Location</h3>
-              <p className="text-white/70 text-sm sm:text-base">Whole London</p>
+              <p className="text-white/70 text-sm sm:text-base">London, United Kingdom</p>
             </div>
           </div>
 
@@ -146,10 +146,10 @@ const Contact = () => {
             </h2>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               <Link
-                to="/services"
+                to="/fleet"
                 className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium uppercase tracking-wide text-white hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto"
               >
-                Our Services
+                Our Fleet
                 <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
               </Link>
               <Link

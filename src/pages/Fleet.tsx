@@ -23,7 +23,7 @@ const featureOptions: { value: VehicleFeatureFilter; label: string }[] = [
   { value: 'privacy', label: 'Privacy Partition' },
 ];
 
-const Services = () => {
+const Fleet = () => {
   const [selectedType, setSelectedType] = useState<VehicleTypeFilter>('all');
   const [selectedFeature, setSelectedFeature] = useState<VehicleFeatureFilter>('all');
   const [typeOpen, setTypeOpen] = useState(false);
@@ -47,7 +47,7 @@ const Services = () => {
   return (
     <>
       <PageMeta
-        title="Our Services & Fleet - Al Safir Chauffeurs"
+        title="Our Fleet - Al Safir Chauffeurs"
         description="Browse our premium fleet: luxury sedans, executive SUVs, and people carriers. Airport transfers, corporate travel, special events, and private hire across London."
       />
       <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
@@ -56,7 +56,7 @@ const Services = () => {
         <div className="text-center mb-10 sm:mb-12 md:mb-16 opacity-0 animate-fadeIn">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-3 sm:mb-4">
             <span className="text-white">Our </span>
-            <span className="text-amber-500">Services</span>
+            <span className="text-amber-500">Fleet</span>
           </h1>
           <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Experience luxury and comfort with our meticulously maintained premium vehicle
@@ -191,4 +191,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Fleet;

@@ -1,6 +1,22 @@
 import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
 import TikTokIcon from './TikTokIcon';
+import { fleet } from '../data/fleet';
+
+/** Split array into N roughly equal columns (for footer fleet) */
+function chunkByColumns<T>(arr: T[], columns: number): T[][] {
+  const len = arr.length;
+  const baseSize = Math.floor(len / columns);
+  const remainder = len % columns;
+  const chunks: T[][] = [];
+  let i = 0;
+  for (let c = 0; c < columns; c++) {
+    const size = baseSize + (c < remainder ? 1 : 0);
+    chunks.push(arr.slice(i, i + size));
+    i += size;
+  }
+  return chunks;
+}
 
 const XIcon = ({ size = 24 }: { size?: number }) => (
   <svg
@@ -47,81 +63,68 @@ const Footer = () => {
 
   return (
     <footer className="bg-black border-t border-white/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
-          {/* Branding */}
-          <div className="space-y-4 text-center sm:text-left">
-            <Link to="/" className="inline-block mx-auto sm:mx-0">
-              <img
-                src="/al-safir-logo-straight.png"
-                alt="Al Safir Luxury Chauffeurs"
-                className="h-14 md:h-20 w-auto object-contain"
-              />
-            </Link>
-            <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-xs mx-auto sm:mx-0">
-              London&apos;s premier luxury chauffeur service. Professional, discreet, and reliable
-              transport for every journey.
-            </p>
-            <div className="flex gap-3 sm:gap-4 flex-wrap justify-center sm:justify-start">
-              <a
-                href="https://x.com/SafirChauffeurs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-amber-500 transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <XIcon size={22} />
-              </a>
-              <a
-                href="https://www.facebook.com/SafirChauffeurs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-amber-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon size={22} />
-              </a>
-              <a
-                href="https://instagram.com/saafir_chauffeur"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-amber-500 transition-colors"
-                aria-label="Instagram @saafir_chauffeur"
-              >
-                <Instagram size={22} />
-              </a>
-              <a
-                href="https://tiktok.com/@SafirChauffeurs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-amber-500 transition-colors"
-                aria-label="TikTok"
-              >
-                <TikTokIcon size={22} />
-              </a>
-              {/* WhatsApp temporarily hidden */}
-              {/* <a
-                href="https://wa.me/447546238066"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-amber-500 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppIcon size={22} />
-              </a> */}
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 md:pt-20 pb-10 sm:pb-14 md:pb-20">
+        {/* Logo + social icons: full-width top strip with clear space */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8 pb-10 sm:pb-12 md:pb-14 border-b border-white/10">
+          <Link to="/" className="flex justify-center sm:justify-start focus:outline-none focus:ring-2 focus:ring-amber-500/50 rounded">
+            <img
+              src="/al-safir-logo-straight.png"
+              alt="Al Safir Luxury Chauffeurs"
+              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
+            />
+          </Link>
+          <div className="flex gap-4 sm:gap-5 flex-wrap justify-center sm:justify-end">
+            <a
+              href="https://x.com/SafirChauffeurs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-amber-500 transition-colors"
+              aria-label="X (Twitter)"
+            >
+              <XIcon size={24} />
+            </a>
+            <a
+              href="https://www.facebook.com/SafirChauffeurs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-amber-500 transition-colors"
+              aria-label="Facebook"
+            >
+              <FacebookIcon size={24} />
+            </a>
+            <a
+              href="https://instagram.com/saafir_chauffeur"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-amber-500 transition-colors"
+              aria-label="Instagram @saafir_chauffeur"
+            >
+              <Instagram size={24} />
+            </a>
+            <a
+              href="https://tiktok.com/@SafirChauffeurs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-amber-500 transition-colors"
+              aria-label="TikTok"
+            >
+              <TikTokIcon size={24} />
+            </a>
           </div>
+        </div>
 
+        {/* Links grid: Pages, Fleet x3, Get in Touch */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 items-start pt-10 sm:pt-12">
           {/* Pages */}
           <div className="text-center sm:text-left">
-            <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-4">
+            <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-5">
               Pages
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {[
                 { label: 'Home', to: '/' },
                 { label: 'About', to: '/about' },
-                { label: 'Fleet', to: '/services' },
+                { label: 'Fleet', to: '/fleet' },
                 { label: 'Book', to: '/book' },
                 { label: 'Contact', to: '/contact' },
               ].map(({ label, to }) => (
@@ -137,33 +140,30 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="text-center sm:text-left">
-            <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-4">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {[
-                'Airport Transfers',
-                'Corporate Travel',
-                'Special Events',
-                'Private Hire',
-              ].map((label) => (
-                <li key={label}>
-                  <Link
-                    to="/services"
-                    className="text-white/80 hover:text-amber-500 text-sm uppercase tracking-wide transition-colors"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Fleet - three separate columns, each with Fleet heading */}
+          {chunkByColumns(fleet, 3).map((column, colIndex) => (
+            <div key={colIndex} className="text-center sm:text-left">
+              <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-5">
+                Fleet
+              </h4>
+              <ul className="space-y-3.5">
+                {column.map((vehicle) => (
+                  <li key={vehicle.name}>
+                    <Link
+                      to={`/fleet?vehicle=${encodeURIComponent(vehicle.name)}`}
+                      className="text-white/80 hover:text-amber-500 text-sm uppercase tracking-wide transition-colors line-clamp-2"
+                    >
+                      {vehicle.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Contact */}
           <div className="text-center sm:text-left">
-            <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-4">
+            <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-5">
               Get in Touch
             </h4>
             <div className="space-y-4">
@@ -188,7 +188,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-white/60 text-xs uppercase tracking-wide mb-1">Location</p>
-                <p className="text-white/90 text-sm">Whole London</p>
+                <p className="text-white/90 text-sm">London, United Kingdom</p>
               </div>
               <div className="pt-2 flex justify-center sm:justify-start">
                 <Link

@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Services from './pages/Services';
+import Fleet from './pages/Fleet';
 import Book from './pages/Book';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
@@ -18,7 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/fleet" element={<Fleet />} />
+          <Route path="/services" element={<Navigate to="/fleet" replace />} />
           <Route path="/book" element={<Book />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
