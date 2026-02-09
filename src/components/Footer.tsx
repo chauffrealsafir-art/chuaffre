@@ -206,10 +206,12 @@ const Footer = () => {
           <p className="text-white/50 text-xs sm:text-sm uppercase tracking-wide">
             &copy; {currentYear} Al Safir Chauffeurs. All rights reserved.
           </p>
-          <p className="text-white/40 text-xs sm:text-sm flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-0">
+          <p className="text-white/40 text-xs sm:text-sm flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-0 flex-wrap">
             <Link to="/privacy" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
             <span className="hidden sm:inline">{' · '}</span>
             <Link to="/terms" className="hover:text-amber-500 transition-colors">Terms & Conditions</Link>
+            <span className="hidden sm:inline">{' · '}</span>
+            <Link to="/refunds" className="hover:text-amber-500 transition-colors">Refunds</Link>
           </p>
         </div>
       </div>

@@ -167,7 +167,7 @@ const Contact = () => {
                 </div>
                 <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Luxury Comfort</h3>
                 <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
+                  Travel in premium vehicles with leather interiors, climate control, and a smooth ride. Every journey is designed for your comfort and style.
                 </p>
               </div>
               <div className="text-center">
@@ -176,7 +176,7 @@ const Contact = () => {
                 </div>
                 <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Reliable Service</h3>
                 <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
+                  Punctual, discreet, and professional. We monitor flights, track your journey, and ensure you are met on time, every time.
                 </p>
               </div>
               <div className="text-center sm:col-span-2 md:col-span-1">
@@ -185,7 +185,7 @@ const Contact = () => {
                 </div>
                 <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Personal Travel</h3>
                 <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
+                  Door-to-door service tailored to you. Airport transfers, corporate travel, or special occasions—we adapt to your schedule and preferences.
                 </p>
               </div>
             </div>
