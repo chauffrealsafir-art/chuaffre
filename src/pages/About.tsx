@@ -45,10 +45,10 @@ const About = () => {
         title="About Us - Al Safir Chauffeurs"
         description="Learn about Al Safir Chauffeurs: London's luxury chauffeur service. Professional, discreet, and reliable transport for airport transfers, corporate travel, and special occasions."
       />
-      <div className="min-h-screen bg-black pt-32 pb-20 px-4">
+      <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <FadeInSection className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
+          <FadeInSection className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-3 sm:mb-4">
               <span className="text-white">About </span>
               <span className="text-amber-500">Us</span>
             </h1>
@@ -62,32 +62,37 @@ const About = () => {
               Our Story
             </span>
           </div>
-          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 md:p-10 lg:p-12 hover:border-amber-500/30 transition-all duration-300">
-            <p className="text-white/90 text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto">
-              Al Safir Chauffeurs is a London-based luxury chauffeur service providing professional,
-              discreet and reliable transport across the capital.
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 sm:p-8 md:p-10 lg:p-12 hover:border-amber-500/30 transition-all duration-300">
+            <h2 className="text-white/90 text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center mb-4 sm:mb-6">
+              Driven by Excellence
+            </h2>
+            <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto">
+              Al Safir Chauffeurs is a luxury chauffeur service business delivering professional, discreet, and reliable transport across the capital and surrounding areas.
             </p>
-            <p className="text-white/80 text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-6">
-              We deliver a seamless experience for airport transfers, business travel, special
-              occasions and private appointments, with a focus on punctuality, comfort and high
-              standards of service. Every journey is tailored to the client, ensuring a smooth and
-              refined travel experience from start to finish.
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              We specialise in airport transfers, executive business travel, private appointments, and special occasions, offering a seamless door-to-door experience built around punctuality, comfort, and exceptional service standards.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              Every journey is tailored to the individual client. From real-time flight monitoring and meet-and-greet services to carefully selected luxury vehicles, our chauffeurs ensure a smooth, refined travel experience from start to finish.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              At Al Safir Chauffeurs, discretion, reliability, and attention to detail are not optional — they are the foundation of every journey we deliver.
             </p>
           </div>
         </FadeInSection>
 
-        <FadeInSection className="grid md:grid-cols-3 gap-8 mt-16">
-          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
-            <div className="text-4xl font-bold text-amber-500 mb-2">10+</div>
-            <p className="text-white/70 text-sm tracking-wide">Years Experience</p>
+        <FadeInSection className="grid sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-10 sm:mt-12 md:mt-16">
+          <div className="text-center p-6 sm:p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-amber-500 mb-2">10+</div>
+            <p className="text-white/70 text-xs sm:text-sm tracking-wide">Years Experience</p>
           </div>
-          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
-            <div className="text-4xl font-bold text-amber-500 mb-2">24/7</div>
-            <p className="text-white/70 text-sm tracking-wide">Available Service</p>
+          <div className="text-center p-6 sm:p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-amber-500 mb-2">24/7</div>
+            <p className="text-white/70 text-xs sm:text-sm tracking-wide">Available Service</p>
           </div>
-          <div className="text-center p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
-            <div className="text-4xl font-bold text-amber-500 mb-2">100%</div>
-            <p className="text-white/70 text-sm tracking-wide">Client Satisfaction</p>
+          <div className="text-center p-6 sm:p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-amber-500 mb-2">100%</div>
+            <p className="text-white/70 text-xs sm:text-sm tracking-wide">Client Satisfaction</p>
           </div>
         </FadeInSection>
 

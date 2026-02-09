@@ -36,7 +36,7 @@ const Terms = () => {
             <section>
               <h2 className="font-serif font-bold text-amber-500 text-lg mb-2">3. Payment & Cancellation</h2>
               <p>
-                Payment terms will be communicated at the time of booking. Cancellation policies may apply;
+                Payment is accepted via bank transfer or card payment. Payment terms will be communicated at the time of booking. Cancellation policies may apply;
                 please refer to your booking confirmation or contact us for details. Deposits may be required for
                 certain journeys.
               </p>
@@ -59,8 +59,8 @@ const Terms = () => {
             <section>
               <h2 className="font-serif font-bold text-amber-500 text-lg mb-2">6. Contact</h2>
               <p>
-                For questions about these terms, please contact us at info@alsafirchauffeurs.co.uk or +44 (0)
-                7546 238066.
+                For questions about these terms, please contact us at info@alsafirchauffeurs.co.uk.
+                {/* Phone number temporarily hidden: +44 (0) 7546 238066 */}
               </p>
             </section>
           </div>

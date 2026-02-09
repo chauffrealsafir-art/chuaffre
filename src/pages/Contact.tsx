@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, MapPin, Check, ArrowRight } from 'lucide-react';
+import { Mail, Instagram, MapPin, Check, ArrowRight } from 'lucide-react';
 import PageMeta from '../components/PageMeta';
 import FadeInSection from '../components/FadeInSection';
 import TikTokIcon from '../components/TikTokIcon';
@@ -9,31 +9,31 @@ const Contact = () => {
     <>
       <PageMeta
         title="Contact Us - Al Safir Chauffeurs"
-        description="Get in touch with Al Safir Chauffeurs. Email, phone, WhatsApp, Instagram, TikTok. London's luxury chauffeur service. Available 24/7."
+        description="Get in touch with Al Safir Chauffeurs. Email, Instagram, TikTok. London's luxury chauffeur service. Available 24/7."
       />
-      <div className="min-h-screen bg-black pt-32 pb-20 px-4">
+      <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <FadeInSection className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 sm:mb-6">
               <span className="text-white">Contact </span>
               <span className="text-amber-500">Us</span>
             </h1>
-            <p className="text-white/70 text-lg">
+            <p className="text-white/70 text-sm sm:text-base md:text-lg">
               Get in touch with us for bookings and inquiries
             </p>
           </FadeInSection>
 
-        <FadeInSection className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300">
-            <div className="flex items-start space-x-4">
-              <div className="bg-amber-500/10 p-4 rounded-lg">
-                <Mail className="text-amber-500" size={28} />
+        <FadeInSection className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-5 sm:p-6 md:p-8 hover:border-amber-500/50 transition-all duration-300">
+            <div className="flex items-start space-x-3 sm:space-x-4">
+              <div className="bg-amber-500/10 p-3 sm:p-4 rounded-lg shrink-0">
+                <Mail className="text-amber-500" size={24} />
               </div>
-              <div>
-                <h3 className="text-white font-semibold text-xl mb-2">Email</h3>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Email</h3>
                 <a
                   href="mailto:info@alsafirchauffeurs.co.uk"
-                  className="text-white/70 hover:text-amber-500 transition-colors"
+                  className="text-white/70 hover:text-amber-500 transition-colors text-sm sm:text-base break-all"
                 >
                   info@alsafirchauffeurs.co.uk
                 </a>
@@ -41,7 +41,8 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300">
+          {/* Phone / WhatsApp section temporarily hidden */}
+          {/* <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300">
             <div className="flex items-start space-x-4">
               <div className="bg-amber-500/10 p-4 rounded-lg">
                 <Phone className="text-amber-500" size={28} />
@@ -59,20 +60,20 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300">
-            <div className="flex items-start space-x-4">
-              <div className="bg-amber-500/10 p-4 rounded-lg">
-                <Instagram className="text-amber-500" size={28} />
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-5 sm:p-6 md:p-8 hover:border-amber-500/50 transition-all duration-300">
+            <div className="flex items-start space-x-3 sm:space-x-4">
+              <div className="bg-amber-500/10 p-3 sm:p-4 rounded-lg shrink-0">
+                <Instagram className="text-amber-500" size={24} />
               </div>
-              <div>
-                <h3 className="text-white font-semibold text-xl mb-2">Instagram</h3>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Instagram</h3>
                 <a
                   href="https://instagram.com/saafir_chauffeur"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-amber-500 transition-colors"
+                  className="text-white/70 hover:text-amber-500 transition-colors text-sm sm:text-base break-all"
                 >
                   @saafir_chauffeur
                 </a>
@@ -80,18 +81,18 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300">
-            <div className="flex items-start space-x-4">
-              <div className="bg-amber-500/10 p-4 rounded-lg text-amber-500">
-                <TikTokIcon size={28} />
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-5 sm:p-6 md:p-8 hover:border-amber-500/50 transition-all duration-300">
+            <div className="flex items-start space-x-3 sm:space-x-4">
+              <div className="bg-amber-500/10 p-3 sm:p-4 rounded-lg text-amber-500 shrink-0">
+                <TikTokIcon size={24} />
               </div>
-              <div>
-                <h3 className="text-white font-semibold text-xl mb-2">TikTok</h3>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">TikTok</h3>
                 <a
                   href="https://tiktok.com/@SafirChauffeurs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-amber-500 transition-colors"
+                  className="text-white/70 hover:text-amber-500 transition-colors text-sm sm:text-base break-all"
                 >
                   @SafirChauffeurs
                 </a>
@@ -101,14 +102,14 @@ const Contact = () => {
         </FadeInSection>
 
         <FadeInSection>
-        <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8">
-          <div className="flex items-start space-x-4 mb-6">
-            <div className="bg-amber-500/10 p-4 rounded-lg">
-              <MapPin className="text-amber-500" size={28} />
+        <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-5 sm:p-6 md:p-8">
+          <div className="flex items-start space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+            <div className="bg-amber-500/10 p-3 sm:p-4 rounded-lg shrink-0">
+              <MapPin className="text-amber-500" size={24} />
             </div>
             <div>
-              <h3 className="text-white font-semibold text-xl mb-2">Location</h3>
-              <p className="text-white/70">London, United Kingdom</p>
+              <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Location</h3>
+              <p className="text-white/70 text-sm sm:text-base">Whole London</p>
             </div>
           </div>
 
@@ -127,10 +128,10 @@ const Contact = () => {
         </div>
         </FadeInSection>
 
-        <FadeInSection className="mt-12 text-center">
-          <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-lg p-8">
-            <h3 className="text-2xl font-serif text-amber-500 mb-3">Available 24/7</h3>
-            <p className="text-white/70 max-w-2xl mx-auto">
+        <FadeInSection className="mt-8 sm:mt-10 md:mt-12 text-center">
+          <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-lg p-5 sm:p-6 md:p-8">
+            <h3 className="text-xl sm:text-2xl font-serif text-amber-500 mb-2 sm:mb-3">Available 24/7</h3>
+            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto">
               Our team is ready to assist you with your luxury travel needs at any time. Contact us
               through any of the methods above and we'll respond promptly.
             </p>
@@ -138,52 +139,52 @@ const Contact = () => {
         </FadeInSection>
 
         {/* Ready to Begin Your Journey */}
-        <FadeInSection as="section" className="mt-20 md:mt-28">
-          <div className="bg-amber-700 rounded-3xl p-8 md:p-12 lg:p-16 text-white">
-            <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl text-center mb-8 md:mb-10 text-white">
+        <FadeInSection as="section" className="mt-12 sm:mt-16 md:mt-20 lg:mt-28">
+          <div className="bg-amber-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 text-white">
+            <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center mb-6 sm:mb-8 md:mb-10 text-white px-2">
               Ready to Begin Your Journey with Us?
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 md:mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               <Link
                 to="/services"
-                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-6 py-3.5 text-sm font-medium uppercase tracking-wide text-white hover:bg-white hover:text-black transition-colors duration-200"
+                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium uppercase tracking-wide text-white hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto"
               >
                 Our Services
-                <ArrowRight size={18} className="text-black group-hover:text-black" />
+                <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
               </Link>
               <Link
                 to="/book"
-                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-6 py-3.5 text-sm font-medium uppercase tracking-wide text-white hover:bg-black hover:text-white border-white hover:border-black transition-colors duration-200"
+                className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium uppercase tracking-wide text-white hover:bg-black hover:text-white border-white hover:border-black transition-colors duration-200 w-full sm:w-auto"
               >
                 Browse Fleet
-                <ArrowRight size={18} />
+                <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
               </Link>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-amber-400 mb-4">
-                  <Check size={22} strokeWidth={2.5} className="text-amber-400" />
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black text-amber-400 mb-3 sm:mb-4">
+                  <Check size={20} strokeWidth={2.5} className="text-amber-400 sm:w-[22px] sm:h-[22px]" />
                 </div>
-                <h3 className="font-serif font-bold text-lg md:text-xl text-white mb-2">Luxury Comfort</h3>
-                <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Luxury Comfort</h3>
+                <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
                 </p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-amber-400 mb-4">
-                  <Check size={22} strokeWidth={2.5} className="text-amber-400" />
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black text-amber-400 mb-3 sm:mb-4">
+                  <Check size={20} strokeWidth={2.5} className="text-amber-400 sm:w-[22px] sm:h-[22px]" />
                 </div>
-                <h3 className="font-serif font-bold text-lg md:text-xl text-white mb-2">Reliable Service</h3>
-                <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Reliable Service</h3>
+                <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-amber-400 mb-4">
-                  <Check size={22} strokeWidth={2.5} className="text-amber-400" />
+              <div className="text-center sm:col-span-2 md:col-span-1">
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black text-amber-400 mb-3 sm:mb-4">
+                  <Check size={20} strokeWidth={2.5} className="text-amber-400 sm:w-[22px] sm:h-[22px]" />
                 </div>
-                <h3 className="font-serif font-bold text-lg md:text-xl text-white mb-2">Personal Travel</h3>
-                <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Personal Travel</h3>
+                <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
                 </p>
               </div>

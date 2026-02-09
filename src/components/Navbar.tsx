@@ -34,13 +34,14 @@ const Navbar = () => {
         isScrolled ? 'bg-black/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="flex flex-col">
-              <span className="font-script text-2xl md:text-3xl text-white leading-tight">AL SAFIR</span>
-              <span className="font-sans text-[10px] md:text-xs text-amber-500 uppercase tracking-logo mt-0.5">Luxury Chauffeurs</span>
-            </div>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 md:h-20">
+          <Link to="/" className="flex items-center shrink-0">
+            <img
+              src="/al-safir-logo-straight.png"
+              alt="Al Safir Luxury Chauffeurs"
+              className="h-12 sm:h-16 md:h-24 w-auto object-contain"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -79,19 +80,24 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden bg-black/98 backdrop-blur-sm"
-          role="navigation"
-          aria-label="Main menu"
-        >
-          <div className="px-4 pt-2 pb-6 space-y-4">
+      <div
+        id="mobile-menu"
+        className={`md:hidden bg-black/98 backdrop-blur-sm border-t border-white/10 overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen
+            ? 'max-h-96 opacity-100'
+            : 'max-h-0 opacity-0'
+        }`}
+        role="navigation"
+        aria-label="Main menu"
+      >
+        <div className={`px-4 pt-4 pb-6 space-y-3 transition-all duration-300 ${
+          isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
+        }`}>
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block py-2 text-base uppercase tracking-logo transition-colors duration-200 ${
+                className={`block py-3 text-base uppercase tracking-logo transition-colors duration-200 border-b border-white/5 ${
                   location.pathname === link.path
                     ? 'text-amber-500 font-semibold'
                     : 'text-white hover:text-amber-500'
@@ -102,14 +108,13 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="btn-animate flex items-center justify-center gap-2 w-full mt-4 border border-white rounded-full px-5 py-3 text-sm font-medium uppercase tracking-logo text-white hover:bg-white hover:text-black"
+              className="btn-animate flex items-center justify-center gap-2 w-full mt-4 border border-white rounded-full px-5 py-3.5 text-sm font-medium uppercase tracking-logo text-white hover:bg-white hover:text-black"
             >
               Contact Us
               <ArrowRight size={18} />
             </Link>
           </div>
-        </div>
-      )}
+      </div>
     </nav>
   );
 };

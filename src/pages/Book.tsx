@@ -103,14 +103,14 @@ const Book = () => {
         title="Book Your Journey - Al Safir Chauffeurs"
         description="Request a luxury chauffeur booking. Airport transfers, corporate travel, special events, and private hire across London. Advance booking recommended."
       />
-      <div className="min-h-screen bg-black pt-32 pb-20 px-4">
+      <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 opacity-0 animate-fadeIn">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 opacity-0 animate-fadeIn">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 sm:mb-6">
             <span className="text-white">Book Your </span>
             <span className="text-amber-500">Journey</span>
           </h1>
-          <p className="text-amber-500/80 text-sm bg-zinc-900/50 border border-amber-500/30 rounded-lg p-4 max-w-2xl mx-auto">
+          <p className="text-amber-500/80 text-xs sm:text-sm bg-zinc-900/50 border border-amber-500/30 rounded-lg p-3 sm:p-4 max-w-2xl mx-auto">
             Advance booking is recommended to guarantee availability.
           </p>
         </div>
@@ -129,11 +129,11 @@ const Book = () => {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 md:p-12 shadow-2xl opacity-0 animate-fadeIn animation-delay-200"
+            className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-4 sm:p-6 md:p-8 lg:p-12 shadow-2xl opacity-0 animate-fadeIn animation-delay-200"
           >
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Full Name *
                 </label>
                 <input
@@ -141,9 +141,9 @@ const Book = () => {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.fullName ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="John Smith"
                 />
                 {errors.fullName && (
@@ -152,7 +152,7 @@ const Book = () => {
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Contact Number *
                 </label>
                 <input
@@ -160,9 +160,9 @@ const Book = () => {
                   name="contactNumber"
                   value={formData.contactNumber}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.contactNumber ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="+44 7XXX XXXXXX"
                 />
                 {errors.contactNumber && (
@@ -171,22 +171,22 @@ const Book = () => {
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-white/90 text-sm font-medium mb-2">Email *</label>
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Email *</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.email ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="your@email.com"
                 />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Pickup Address *
                 </label>
                 <input
@@ -194,9 +194,9 @@ const Book = () => {
                   name="pickupAddress"
                   value={formData.pickupAddress}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.pickupAddress ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="123 Main Street, London"
                 />
                 {errors.pickupAddress && (
@@ -205,7 +205,7 @@ const Book = () => {
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Pickup Postcode *
                 </label>
                 <input
@@ -213,9 +213,9 @@ const Book = () => {
                   name="pickupPostcode"
                   value={formData.pickupPostcode}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.pickupPostcode ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="SW1A 1AA"
                 />
                 {errors.pickupPostcode && (
@@ -224,7 +224,7 @@ const Book = () => {
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Drop-off Address *
                 </label>
                 <input
@@ -232,9 +232,9 @@ const Book = () => {
                   name="dropoffAddress"
                   value={formData.dropoffAddress}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.dropoffAddress ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="Heathrow Airport"
                 />
                 {errors.dropoffAddress && (
@@ -243,7 +243,7 @@ const Book = () => {
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Drop-off Postcode *
                 </label>
                 <input
@@ -251,9 +251,9 @@ const Book = () => {
                   name="dropoffPostcode"
                   value={formData.dropoffPostcode}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.dropoffPostcode ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                   placeholder="TW6 1AP"
                 />
                 {errors.dropoffPostcode && (
@@ -262,7 +262,7 @@ const Book = () => {
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Date & Time *
                 </label>
                 <input
@@ -270,9 +270,9 @@ const Book = () => {
                   name="dateTime"
                   value={formData.dateTime}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
                     errors.dateTime ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors`}
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                 />
                 {errors.dateTime && (
                   <p className="text-red-500 text-xs mt-1">{errors.dateTime}</p>
@@ -280,7 +280,7 @@ const Book = () => {
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Number of Passengers *
                 </label>
                 <div className="relative">
@@ -288,7 +288,7 @@ const Book = () => {
                     name="passengers"
                     value={formData.passengers}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 pr-10 bg-black/50 border border-amber-500/30 rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 bg-black/50 border border-amber-500/30 rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                       <option key={num} value={num}>
@@ -296,12 +296,12 @@ const Book = () => {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-amber-500" aria-hidden />
+                  <ChevronDown size={18} className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none text-amber-500 sm:w-5 sm:h-5" aria-hidden />
                 </div>
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Number of Luggage Items *
                 </label>
                 <div className="relative">
@@ -309,7 +309,7 @@ const Book = () => {
                     name="luggage"
                     value={formData.luggage}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 pr-10 bg-black/50 border border-amber-500/30 rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 bg-black/50 border border-amber-500/30 rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                       <option key={num} value={num}>
@@ -317,12 +317,12 @@ const Book = () => {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-amber-500" aria-hidden />
+                  <ChevronDown size={18} className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none text-amber-500 sm:w-5 sm:h-5" aria-hidden />
                 </div>
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Flight Number (Optional)
                 </label>
                 <input
@@ -330,13 +330,13 @@ const Book = () => {
                   name="flightNumber"
                   value={formData.flightNumber}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black/50 border border-amber-500/30 rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border border-amber-500/30 rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors"
                   placeholder="BA123"
                 />
               </div>
 
               <div>
-                <label className="block text-white/90 text-sm font-medium mb-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Vehicle Preference *
                 </label>
                 <div className="relative">
@@ -344,9 +344,9 @@ const Book = () => {
                     name="vehiclePreference"
                     value={formData.vehiclePreference}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 pr-10 bg-black/50 border ${
+                    className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 bg-black/50 border ${
                       errors.vehiclePreference ? 'border-red-500' : 'border-amber-500/30'
-                    } rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer`}
+                    } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer`}
                   >
                     <option value="">Select a vehicle</option>
                     {fleet.map((v) => (
@@ -355,7 +355,7 @@ const Book = () => {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-amber-500" aria-hidden />
+                  <ChevronDown size={18} className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none text-amber-500 sm:w-5 sm:h-5" aria-hidden />
                 </div>
                 {errors.vehiclePreference && (
                   <p className="text-red-500 text-xs mt-1">{errors.vehiclePreference}</p>
@@ -363,10 +363,10 @@ const Book = () => {
               </div>
             </div>
 
-            <div className="mt-8 bg-black/50 border border-amber-500/20 rounded-lg p-6">
-              <h3 className="text-amber-500 font-semibold mb-3 text-lg">Payment Information</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Payment is accepted via bank transfer or card. A deposit may be required for
+            <div className="mt-6 sm:mt-8 bg-black/50 border border-amber-500/20 rounded-lg p-4 sm:p-5 md:p-6">
+              <h3 className="text-amber-500 font-semibold mb-2 sm:mb-3 text-base sm:text-lg">Payment Information</h3>
+              <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
+                Payment is accepted via bank transfer or card payment. A deposit may be required for
                 long-distance and full-day bookings.
               </p>
             </div>
@@ -374,7 +374,7 @@ const Book = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-animate w-full mt-8 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 disabled:from-amber-500/70 disabled:to-amber-600/70 disabled:cursor-not-allowed disabled:hover:scale-100 text-black font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-amber-500/50 flex items-center justify-center gap-2"
+              className="btn-animate w-full mt-6 sm:mt-8 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 disabled:from-amber-500/70 disabled:to-amber-600/70 disabled:cursor-not-allowed disabled:hover:scale-100 text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-amber-500/50 flex items-center justify-center gap-2 text-sm sm:text-base"
             >
               {isSubmitting ? (
                 <>
