@@ -60,7 +60,7 @@ const Terms = () => {
               <h2 className="font-serif font-bold text-amber-500 text-lg mb-2">6. Contact</h2>
               <p>
                 For questions about these terms, please contact us at info@alsafirchauffeurs.co.uk.
-                {/* Phone number temporarily hidden: +44 (0) 7546 238066 */}
+                Phone: +44 7462 380655
               </p>
             </section>
           </div>

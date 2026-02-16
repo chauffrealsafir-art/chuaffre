@@ -135,18 +135,18 @@ const Fleet = () => {
             {filteredFleet.map((vehicle, index) => (
               <article
                 key={vehicle.name}
-                className="bg-zinc-900/50 border border-amber-500/20 rounded-lg overflow-hidden hover:border-amber-500/30 transition-all duration-300 opacity-0 animate-fadeIn"
+                className="bg-zinc-900/50 border border-amber-500/20 rounded-lg overflow-hidden hover:border-amber-500/30 transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                <div className="p-4 sm:p-5 md:p-6 pb-0">
-                  <h3 className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl">
+                <div className="p-4 sm:p-5 md:p-6 pb-0 h-[90px] sm:h-[100px] md:h-[110px] flex flex-col justify-start">
+                  <h3 className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight">
                     {vehicle.name}
                   </h3>
                   <p className="font-sans text-amber-500 text-xs uppercase tracking-logo mt-1">
                     {vehicle.category}
                   </p>
                 </div>
-                <div className="relative h-48 sm:h-56 md:h-64 mt-4 sm:mt-6 overflow-hidden bg-black/30">
+                <div className="relative h-48 sm:h-56 md:h-64 mt-4 overflow-hidden bg-black/30 flex-shrink-0">
                   <img
                     src={vehicle.image}
                     alt={vehicle.name}
@@ -154,23 +154,9 @@ const Fleet = () => {
                   />
                 </div>
                 <div className="p-4 sm:p-5 md:p-6 pt-3 sm:pt-4">
-                  <div className="divide-y divide-white/10">
-                    <div className="flex justify-between items-center py-2 sm:py-3">
-                      <span className="text-white/60 text-xs sm:text-sm">Year</span>
-                      <span className="font-serif font-bold text-amber-500 text-sm sm:text-base">{vehicle.year}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 sm:py-3">
-                      <span className="text-white/60 text-xs sm:text-sm">Seats</span>
-                      <span className="font-serif font-bold text-amber-500 text-sm sm:text-base">{vehicle.seats}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 sm:py-3">
-                      <span className="text-white/60 text-xs sm:text-sm">Baggage</span>
-                      <span className="font-serif font-bold text-amber-500 text-sm sm:text-base">{vehicle.baggage}</span>
-                    </div>
-                  </div>
                   <Link
                     to={`/book?vehicle=${encodeURIComponent(vehicle.name)}`}
-                    className="btn-animate mt-3 sm:mt-4 flex items-center justify-center gap-2 w-full border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-medium uppercase tracking-logo transition-colors"
+                    className="btn-animate flex items-center justify-center gap-2 w-full border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-medium uppercase tracking-logo transition-colors"
                   >
                     Request a quote
                     <ArrowRight size={14} className="sm:w-4 sm:h-4" />

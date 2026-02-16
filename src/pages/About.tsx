@@ -6,25 +6,25 @@ import Marquee from '../components/Marquee';
 
 const testimonials = [
   {
-    name: 'Alexis Carter',
-    location: 'Dubai, UAE',
+    name: 'أحمد الخالدي',
+    location: 'London, UK',
     quote:
       'Exceptional service from start to finish. The driver was punctual, the car was immaculate, and the whole experience felt truly premium. I would recommend Al Safir to anyone who values reliability and comfort.',
-    initials: 'AC',
+    initials: 'أخ',
   },
   {
-    name: 'Sarah Mitchell',
+    name: 'فاطمة العلي',
     location: 'London, UK',
     quote:
       'We use Al Safir for all our executive transfers. Professional, discreet, and always on time. They have become an essential part of how we do business.',
-    initials: 'SM',
+    initials: 'فع',
   },
   {
-    name: 'James Williams',
-    location: 'Manchester, UK',
+    name: 'محمد السعيد',
+    location: 'London, UK',
     quote:
       'From airport pickups to special occasions, Al Safir never disappoints. The attention to detail and the quality of the vehicles is outstanding.',
-    initials: 'JW',
+    initials: 'مس',
   },
 ];
 
@@ -67,7 +67,7 @@ const About = () => {
               Driven by Excellence
             </h2>
             <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto">
-              Al Safir Chauffeurs is a luxury chauffeur service business delivering professional, discreet, and reliable transport across the capital and surrounding areas.
+              Al Safir Chauffeurs is a luxury chauffeur service business delivering professional, discreet, and reliable transport across London.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
               We specialise in airport transfers, executive business travel, private appointments, and special occasions, offering a seamless door-to-door experience built around punctuality, comfort, and exceptional service standards.
@@ -83,7 +83,7 @@ const About = () => {
 
         <FadeInSection className="grid sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-10 sm:mt-12 md:mt-16">
           <div className="text-center p-6 sm:p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">
-            <div className="text-3xl sm:text-4xl font-bold text-amber-500 mb-2">10+</div>
+            <div className="text-3xl sm:text-4xl font-bold text-amber-500 mb-2">5+</div>
             <p className="text-white/70 text-xs sm:text-sm tracking-wide">Years Experience</p>
           </div>
           <div className="text-center p-6 sm:p-8 bg-zinc-900/50 border border-amber-500/10 rounded-lg hover:border-amber-500/30 transition-all duration-300">

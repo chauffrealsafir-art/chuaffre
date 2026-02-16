@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Instagram, MapPin, Check, ArrowRight } from 'lucide-react';
+import { Mail, Instagram, MapPin, Check, ArrowRight, Phone } from 'lucide-react';
 import PageMeta from '../components/PageMeta';
 import FadeInSection from '../components/FadeInSection';
 import TikTokIcon from '../components/TikTokIcon';
@@ -41,26 +41,25 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Phone / WhatsApp section temporarily hidden */}
-          {/* <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-8 hover:border-amber-500/50 transition-all duration-300">
-            <div className="flex items-start space-x-4">
-              <div className="bg-amber-500/10 p-4 rounded-lg">
-                <Phone className="text-amber-500" size={28} />
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-5 sm:p-6 md:p-8 hover:border-amber-500/50 transition-all duration-300">
+            <div className="flex items-start space-x-3 sm:space-x-4">
+              <div className="bg-amber-500/10 p-3 sm:p-4 rounded-lg shrink-0">
+                <Phone className="text-amber-500" size={24} />
               </div>
-              <div>
-                <h3 className="text-white font-semibold text-xl mb-2">Phone / WhatsApp</h3>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Phone / WhatsApp</h3>
                 <a
-                  href="https://wa.me/447546238066"
+                  href="https://wa.me/447462380655"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-amber-500 transition-colors"
-                  aria-label="Open WhatsApp to chat with +44 7546 238066"
+                  className="text-white/70 hover:text-amber-500 transition-colors text-sm sm:text-base"
+                  aria-label="Open WhatsApp to chat with +44 7462 380655"
                 >
-                  +44 (0) 7546 238066
+                  +44 7462 380655
                 </a>
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-5 sm:p-6 md:p-8 hover:border-amber-500/50 transition-all duration-300">
             <div className="flex items-start space-x-3 sm:space-x-4">
@@ -70,12 +69,12 @@ const Contact = () => {
               <div className="min-w-0 flex-1">
                 <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Instagram</h3>
                 <a
-                  href="https://instagram.com/saafir_chauffeur"
+                  href="https://www.instagram.com/safirchauffeurs?igsh=c2J3M2RhYWV0ZmR1&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-amber-500 transition-colors text-sm sm:text-base break-all"
                 >
-                  @saafir_chauffeur
+                  @safirchauffeurs
                 </a>
               </div>
             </div>
@@ -89,7 +88,7 @@ const Contact = () => {
               <div className="min-w-0 flex-1">
                 <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">TikTok</h3>
                 <a
-                  href="https://tiktok.com/@SafirChauffeurs"
+                  href="https://vm.tiktok.com/ZNRygTJNR/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-amber-500 transition-colors text-sm sm:text-base break-all"
@@ -109,20 +108,20 @@ const Contact = () => {
             </div>
             <div>
               <h3 className="text-white font-semibold text-lg sm:text-xl mb-1 sm:mb-2">Location</h3>
-              <p className="text-white/70 text-sm sm:text-base">London, United Kingdom</p>
+              <p className="text-white/70 text-sm sm:text-base">Knightsbridge, London</p>
             </div>
           </div>
 
           <div className="aspect-video bg-zinc-800/50 rounded-lg overflow-hidden border border-amber-500/10">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.5436018141683!2d-0.12765538422947517!3d51.50735097963546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slondon!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.5436018141683!2d-0.1607!3d51.5014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760532743b0d4f%3A0x9e2890acf8a2c1a1!2sKnightsbridge%2C%20London!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="London Map"
+              title="Knightsbridge, London Map"
             ></iframe>
           </div>
         </div>

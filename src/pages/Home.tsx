@@ -76,8 +76,8 @@ const Home = () => {
     },
     {
       image: bannerImages[4],
-      title: 'London & Beyond',
-      subtitle: 'Wherever You Need To Go',
+      title: 'London',
+      subtitle: 'We Serve Only in London',
     },
   ];
 
