@@ -69,13 +69,13 @@ const Navbar = () => {
 
           <button
             type="button"
-            className="md:hidden text-white p-2 -m-2"
+            className="md:hidden text-white p-3 min-w-[48px] min-h-[48px] flex items-center justify-center -mr-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -90,14 +90,14 @@ const Navbar = () => {
         role="navigation"
         aria-label="Main menu"
       >
-        <div className={`px-4 pt-4 pb-6 space-y-3 transition-all duration-300 ${
+        <div className={`px-4 pt-4 pb-6 space-y-0 transition-all duration-300 ${
           isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
         }`}>
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block py-3 text-base uppercase tracking-logo transition-colors duration-200 border-b border-white/5 ${
+                className={`flex items-center min-h-[48px] py-3 text-base uppercase tracking-logo transition-colors duration-200 border-b border-white/5 active:bg-white/5 ${
                   location.pathname === link.path
                     ? 'text-amber-500 font-semibold'
                     : 'text-white hover:text-amber-500'
@@ -108,7 +108,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="btn-animate flex items-center justify-center gap-2 w-full mt-4 border border-white rounded-full px-5 py-3.5 text-sm font-medium uppercase tracking-logo text-white hover:bg-white hover:text-black"
+              className="btn-animate flex items-center justify-center gap-2 w-full mt-4 min-h-[48px] border border-white rounded-full px-5 py-3.5 text-sm font-medium uppercase tracking-logo text-white hover:bg-white hover:text-black"
             >
               Contact Us
               <ArrowRight size={18} />

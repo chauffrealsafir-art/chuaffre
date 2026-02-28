@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-black overflow-x-hidden w-full">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

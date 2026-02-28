@@ -30,6 +30,7 @@
     font-family: 'Aileron', sans-serif;
     background-color: #000000;
     color: #FFFFFF;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -38,6 +39,14 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Better tap targets and remove tap highlight on buttons/links */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   /* Focus styles for keyboard users - visible ring */

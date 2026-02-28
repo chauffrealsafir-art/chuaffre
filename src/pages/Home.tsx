@@ -96,10 +96,11 @@ const Home = () => {
         >
           {/* Full-screen background image - no black block covering it */}
           <div
-            className="absolute inset-0 bg-cover"
+            className="absolute inset-0 bg-cover bg-no-repeat bg-center"
             style={{
               backgroundImage: `url(${section.image})`,
               backgroundPosition: index === 0 ? 'center 75%' : 'center center',
+              backgroundSize: 'cover',
             }}
           />
           {/* Subtle overlay so text stays readable - image still clearly visible */}
@@ -107,7 +108,7 @@ const Home = () => {
 
           {/* Main text - overlaid on image, no solid black section */}
           <div
-            className={`relative z-10 flex flex-1 items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 transition-all duration-1000 ${
+            className={`relative z-10 flex flex-1 min-h-0 items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 transition-all duration-1000 ${
               index === 0
                 ? hero0Entered
                   ? 'opacity-100 translate-y-0'
@@ -121,8 +122,8 @@ const Home = () => {
                     : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="w-full max-w-4xl">
-              <h1 className={`mb-3 sm:mb-4 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider px-2 ${index === 2 ? 'whitespace-nowrap' : ''}`}>
+            <div className="w-full max-w-4xl min-w-0">
+              <h1 className={`mb-3 sm:mb-4 font-serif text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider px-2 break-words ${index === 2 ? 'sm:whitespace-nowrap' : ''}`}>
                 {index === 0 ? (
                   <>
                     <span className="text-white">Al Safir </span>
@@ -139,21 +140,21 @@ const Home = () => {
                   ))
                 )}
               </h1>
-              <p className={`text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 ${index === 0 ? 'font-serif text-amber-500 font-medium' : 'font-sans text-white/90 font-light'}`}>
+              <p className={`text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 break-words ${index === 0 ? 'font-serif text-amber-500 font-medium' : 'font-sans text-white/90 font-light'}`}>
                 {section.subtitle}
               </p>
               {index === 0 && (
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 px-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 px-2">
                   <Link
                     to="/book"
-                    className="btn-animate inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-black font-medium uppercase tracking-logo px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto justify-center"
+                    className="btn-animate inline-flex items-center justify-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-black font-medium uppercase tracking-logo px-5 sm:px-6 min-h-[48px] py-3 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto"
                   >
                     Book Now
                     <ArrowRight size={14} className="shrink-0" />
                   </Link>
                   <Link
                     to="/fleet"
-                    className="btn-animate inline-flex items-center gap-1.5 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-medium uppercase tracking-logo px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto justify-center"
+                    className="btn-animate inline-flex items-center justify-center gap-1.5 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-medium uppercase tracking-logo px-5 sm:px-6 min-h-[48px] py-3 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto"
                   >
                     Fleet
                     <ArrowRight size={14} className="shrink-0" />
