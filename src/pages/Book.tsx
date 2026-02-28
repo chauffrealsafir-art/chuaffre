@@ -15,7 +15,9 @@ const Book = () => {
     pickupPostcode: '',
     dropoffAddress: '',
     dropoffPostcode: '',
-    dateTime: '',
+    pickupDate: '',
+    pickupTime: '',
+    dropoffTime: '',
     passengers: '1',
     luggage: '1',
     flightNumber: '',
@@ -59,7 +61,9 @@ const Book = () => {
       newErrors.dropoffAddress = 'Drop-off address is required';
     if (!formData.dropoffPostcode.trim())
       newErrors.dropoffPostcode = 'Drop-off postcode is required';
-    if (!formData.dateTime) newErrors.dateTime = 'Date and time is required';
+    if (!formData.pickupDate) newErrors.pickupDate = 'Pickup date is required';
+    if (!formData.pickupTime) newErrors.pickupTime = 'Pickup time is required';
+    if (!formData.dropoffTime) newErrors.dropoffTime = 'Drop-off time is required';
     if (!formData.vehiclePreference)
       newErrors.vehiclePreference = 'Vehicle preference is required';
 
@@ -67,34 +71,67 @@ const Book = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      setIsSubmitting(true);
-      // Simulate request delay; replace with real API call when backend exists
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitted(true);
-        setTimeout(() => {
-          setSubmitted(false);
-          setFormData({
-            fullName: '',
-            contactNumber: '',
-            email: '',
-            pickupAddress: '',
-            pickupPostcode: '',
-            dropoffAddress: '',
-            dropoffPostcode: '',
-            dateTime: '',
-            passengers: '1',
-            luggage: '1',
-            flightNumber: '',
-            vehiclePreference: '',
-          });
-        }, 5000);
-      }, 1500);
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    const formPayload = {
+      fullName: formData.fullName,
+      contactNumber: formData.contactNumber,
+      email: formData.email,
+      pickupAddress: formData.pickupAddress,
+      pickupPostcode: formData.pickupPostcode,
+      dropoffAddress: formData.dropoffAddress,
+      dropoffPostcode: formData.dropoffPostcode,
+      pickupDate: formData.pickupDate,
+      pickupTime: formData.pickupTime,
+      dropoffTime: formData.dropoffTime,
+      passengers: formData.passengers,
+      luggage: formData.luggage,
+      flightNumber: formData.flightNumber || '-',
+      vehiclePreference: formData.vehiclePreference || '-',
+    };
+
+    try {
+      const res = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formPayload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error((data as { error?: string }).error || 'Submit failed');
+    } catch {
+      // Fallback: open mailto so the user can still send
+      const body = Object.entries(formPayload)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n');
+      window.location.href = `mailto:info@alsafirchauffeurs.co.uk?subject=${encodeURIComponent('New booking request - Al Safir Chauffeurs')}&body=${encodeURIComponent(body)}`;
     }
+
+    setSubmitted(true);
+    setIsSubmitting(false);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        fullName: '',
+        contactNumber: '',
+        email: '',
+        pickupAddress: '',
+        pickupPostcode: '',
+        dropoffAddress: '',
+        dropoffPostcode: '',
+        pickupDate: '',
+        pickupTime: '',
+        dropoffTime: '',
+        passengers: '1',
+        luggage: '1',
+        flightNumber: '',
+        vehiclePreference: '',
+      });
+    }, 5000);
   };
 
   return (
@@ -261,21 +298,57 @@ const Book = () => {
                 )}
               </div>
 
-              <div className="md:col-span-2">
+              <div>
                 <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
-                  Date & Time *
+                  Pickup Date *
                 </label>
                 <input
-                  type="datetime-local"
-                  name="dateTime"
-                  value={formData.dateTime}
+                  type="date"
+                  name="pickupDate"
+                  value={formData.pickupDate}
                   onChange={handleChange}
                   className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
-                    errors.dateTime ? 'border-red-500' : 'border-amber-500/30'
+                    errors.pickupDate ? 'border-red-500' : 'border-amber-500/30'
                   } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                 />
-                {errors.dateTime && (
-                  <p className="text-red-500 text-xs mt-1">{errors.dateTime}</p>
+                {errors.pickupDate && (
+                  <p className="text-red-500 text-xs mt-1">{errors.pickupDate}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
+                  Pickup Time *
+                </label>
+                <input
+                  type="time"
+                  name="pickupTime"
+                  value={formData.pickupTime}
+                  onChange={handleChange}
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
+                    errors.pickupTime ? 'border-red-500' : 'border-amber-500/30'
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
+                />
+                {errors.pickupTime && (
+                  <p className="text-red-500 text-xs mt-1">{errors.pickupTime}</p>
+                )}
+              </div>
+
+              <div className="md:col-span-2">
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
+                  Drop-off Time *
+                </label>
+                <input
+                  type="time"
+                  name="dropoffTime"
+                  value={formData.dropoffTime}
+                  onChange={handleChange}
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
+                    errors.dropoffTime ? 'border-red-500' : 'border-amber-500/30'
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
+                />
+                {errors.dropoffTime && (
+                  <p className="text-red-500 text-xs mt-1">{errors.dropoffTime}</p>
                 )}
               </div>
 

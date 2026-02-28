@@ -139,7 +139,7 @@ const Contact = () => {
 
         {/* Ready to Begin Your Journey */}
         <FadeInSection as="section" className="mt-12 sm:mt-16 md:mt-20 lg:mt-28">
-          <div className="bg-amber-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 text-white">
+          <div className="bg-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 text-white border border-amber-500/30">
             <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center mb-6 sm:mb-8 md:mb-10 text-white px-2">
               Ready to Begin Your Journey with Us?
             </h2>
@@ -161,8 +161,8 @@ const Contact = () => {
             </div>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black text-amber-400 mb-3 sm:mb-4">
-                  <Check size={20} strokeWidth={2.5} className="text-amber-400 sm:w-[22px] sm:h-[22px]" />
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-amber-500 text-black mb-3 sm:mb-4">
+                  <Check size={20} strokeWidth={2.5} className="text-black sm:w-[22px] sm:h-[22px]" />
                 </div>
                 <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Luxury Comfort</h3>
                 <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
@@ -170,8 +170,8 @@ const Contact = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black text-amber-400 mb-3 sm:mb-4">
-                  <Check size={20} strokeWidth={2.5} className="text-amber-400 sm:w-[22px] sm:h-[22px]" />
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-amber-500 text-black mb-3 sm:mb-4">
+                  <Check size={20} strokeWidth={2.5} className="text-black sm:w-[22px] sm:h-[22px]" />
                 </div>
                 <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Reliable Service</h3>
                 <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">
@@ -179,8 +179,8 @@ const Contact = () => {
                 </p>
               </div>
               <div className="text-center sm:col-span-2 md:col-span-1">
-                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black text-amber-400 mb-3 sm:mb-4">
-                  <Check size={20} strokeWidth={2.5} className="text-amber-400 sm:w-[22px] sm:h-[22px]" />
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-amber-500 text-black mb-3 sm:mb-4">
+                  <Check size={20} strokeWidth={2.5} className="text-black sm:w-[22px] sm:h-[22px]" />
                 </div>
                 <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-white mb-1.5 sm:mb-2">Personal Travel</h3>
                 <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed px-2">

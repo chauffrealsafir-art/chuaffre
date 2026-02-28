@@ -49,8 +49,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <FadeInSection className="text-center mb-10 sm:mb-12 md:mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-3 sm:mb-4">
-              <span className="text-white">About </span>
-              <span className="text-amber-500">Us</span>
+              <span className="text-white">About Us</span>
             </h1>
           </FadeInSection>
 
@@ -63,20 +62,32 @@ const About = () => {
             </span>
           </div>
           <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 sm:p-8 md:p-10 lg:p-12 hover:border-amber-500/30 transition-all duration-300">
-            <h2 className="text-white/90 text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center mb-4 sm:mb-6">
+            <h2 className="text-amber-500 text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center mb-4 sm:mb-6">
               Driven by Excellence
             </h2>
             <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto">
-              Al Safir Chauffeurs is a luxury chauffeur service business delivering professional, discreet, and reliable transport across London.
+              Al Safir Luxury Chauffeurs is a bespoke chauffeur service created for clients who expect more than transportation - They expect excellence without compromise. We specialise in providing discreet, high-level mobility solutions for executives, high-net-worth individuals, diplomats, and international visitors who require reliability, privacy, and refined comfort at all times.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
-              We specialise in airport transfers, executive business travel, private appointments, and special occasions, offering a seamless door-to-door experience built around punctuality, comfort, and exceptional service standards.
+              Our approach is simple: complete flexibility combined with absolute precision.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
-              Every journey is tailored to the individual client. From real-time flight monitoring and meet-and-greet services to carefully selected luxury vehicles, our chauffeurs ensure a smooth, refined travel experience from start to finish.
+              Clients can secure a chauffeur and luxury vehicle for a single journey, an entire day, a week, or long-term monthly arrangements. This allows uninterrupted mobility throughout London and the UK, with a dedicated professional who understands schedules, preferences, and expectations.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
-              At Al Safir Chauffeurs, discretion, reliability, and attention to detail are not optional — they are the foundation of every journey we deliver.
+              From airport arrivals to complex multi-stop itineraries, every journey is carefully coordinated. We provide executive airport transfers, private jet terminal collections, corporate transport, lifestyle travel, special events, and long-distance journeys  all delivered with calm professionalism and meticulous attention to detail.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              Our fleet represents modern luxury, combining comfort, safety, and presence. Interiors are quiet and refined, creating a private environment where clients can relax, work, or travel without distraction.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              Our chauffeurs are selected not only for driving expertise, but for professionalism, discretion, and situational awareness. They anticipate needs before they arise, manage logistics seamlessly, and maintain the highest standards of presentation and conduct.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              What defines Al Safir Luxury Chauffeurs is consistency. Clients know that every booking will be executed flawlessly, regardless of complexity or duration.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
+              We are not simply a transport provider. We are a trusted mobility partner.
             </p>
           </div>
         </FadeInSection>

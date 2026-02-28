@@ -104,16 +104,6 @@ export const fleet: FleetVehicle[] = [
     image: '/banners/Fleet - ASC/5 Series.png',
   },
   {
-    name: 'Mercedes GLS (Maybach)',
-    category: 'SUV',
-    type: 'suv',
-    features: ['leather', 'wifi', 'privacy'],
-    year: 2024,
-    seats: 4,
-    baggage: 5,
-    image: '/banners/Fleet - ASC/GLS (Mayback).png',
-  },
-  {
     name: 'Audi RS6',
     category: 'Luxury',
     type: 'luxury',

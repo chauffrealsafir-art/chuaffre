@@ -89,10 +89,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Other */}
           <div className="text-center lg:text-left flex flex-col w-full max-w-xs">
             <h4 className="font-sans font-bold text-white text-xs uppercase tracking-logo mb-5">
-              Legal
+              Other
             </h4>
             <ul className="space-y-3.5 flex-grow">
               {[
@@ -110,6 +110,14 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            <div className="pt-4 mt-4 flex justify-center lg:justify-start">
+              <Link
+                to="/book"
+                className="btn-animate inline-flex items-center gap-2 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black px-4 py-2 rounded-full text-sm font-medium uppercase tracking-logo"
+              >
+                Book Now
+              </Link>
+            </div>
           </div>
 
           {/* Contact */}
@@ -139,14 +147,6 @@ const Footer = () => {
               <div>
                 <p className="text-white/60 text-xs uppercase tracking-wide mb-1">Location</p>
                 <p className="text-white/90 text-sm">Knightsbridge, London</p>
-              </div>
-              <div className="pt-2 mt-auto flex justify-center lg:justify-start">
-                <Link
-                  to="/book"
-                  className="btn-animate inline-flex items-center gap-2 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black px-4 py-2 rounded-full text-sm font-medium uppercase tracking-logo"
-                >
-                  Book Now
-                </Link>
               </div>
             </div>
           </div>

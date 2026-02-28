@@ -135,18 +135,26 @@ const Fleet = () => {
             {filteredFleet.map((vehicle, index) => (
               <article
                 key={vehicle.name}
-                className="bg-zinc-900/50 border border-amber-500/20 rounded-lg overflow-hidden hover:border-amber-500/30 transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
+                className="bg-[#F7F2E7] border border-amber-700/30 rounded-lg overflow-hidden hover:border-amber-600/50 transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="p-4 sm:p-5 md:p-6 pb-0 h-[90px] sm:h-[100px] md:h-[110px] flex flex-col justify-start">
-                  <h3 className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight">
-                    {vehicle.name}
+                  <h3 className="font-serif font-bold text-black text-lg sm:text-xl md:text-2xl leading-tight">
+                    {vehicle.name.includes(' (Long') ? (
+                      <>
+                        {vehicle.name.split(' (Long')[0]}
+                        <br />
+                        {' (Long' + vehicle.name.split(' (Long')[1]}
+                      </>
+                    ) : (
+                      vehicle.name
+                    )}
                   </h3>
-                  <p className="font-sans text-amber-500 text-xs uppercase tracking-logo mt-1">
+                  <p className="font-sans text-black/80 text-xs uppercase tracking-logo mt-1">
                     {vehicle.category}
                   </p>
                 </div>
-                <div className="relative h-48 sm:h-56 md:h-64 mt-4 overflow-hidden bg-black/30 flex-shrink-0">
+                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 mt-4 overflow-hidden bg-[#F7F2E7] flex-shrink-0">
                   <img
                     src={vehicle.image}
                     alt={vehicle.name}
@@ -156,7 +164,7 @@ const Fleet = () => {
                 <div className="p-4 sm:p-5 md:p-6 pt-3 sm:pt-4">
                   <Link
                     to={`/book?vehicle=${encodeURIComponent(vehicle.name)}`}
-                    className="btn-animate flex items-center justify-center gap-2 w-full border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-medium uppercase tracking-logo transition-colors"
+                    className="btn-animate flex items-center justify-center gap-2 w-full bg-black border-2 border-black text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium uppercase tracking-logo transition-colors"
                   >
                     Request a quote
                     <ArrowRight size={14} className="sm:w-4 sm:h-4" />

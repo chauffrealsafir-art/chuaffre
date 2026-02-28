@@ -55,9 +55,9 @@ const Home = () => {
 
   const heroSections = [
     {
-      image: bannerImages[4],
-      title: 'Al Safir Chauffeurs',
-      subtitle: 'Driven By Excellence',
+      image: bannerImages[0],
+      title: 'London',
+      subtitle: 'We Serve Only in London',
     },
     {
       image: bannerImages[1],
@@ -75,9 +75,9 @@ const Home = () => {
       subtitle: 'Premium Vehicles at Your Service',
     },
     {
-      image: bannerImages[0],
-      title: 'London',
-      subtitle: 'We Serve Only in London',
+      image: bannerImages[4],
+      title: 'Al Safir Chauffeurs',
+      subtitle: 'Driven By Excellence',
     },
   ];
 
