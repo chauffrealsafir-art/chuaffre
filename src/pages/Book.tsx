@@ -17,6 +17,7 @@ const Book = () => {
     dropoffPostcode: '',
     pickupDate: '',
     pickupTime: '',
+    dropoffDate: '',
     dropoffTime: '',
     passengers: '1',
     luggage: '1',
@@ -63,6 +64,7 @@ const Book = () => {
       newErrors.dropoffPostcode = 'Drop-off postcode is required';
     if (!formData.pickupDate) newErrors.pickupDate = 'Pickup date is required';
     if (!formData.pickupTime) newErrors.pickupTime = 'Pickup time is required';
+    if (!formData.dropoffDate) newErrors.dropoffDate = 'Drop-off date is required';
     if (!formData.dropoffTime) newErrors.dropoffTime = 'Drop-off time is required';
     if (!formData.vehiclePreference)
       newErrors.vehiclePreference = 'Vehicle preference is required';
@@ -88,6 +90,7 @@ const Book = () => {
       dropoffPostcode: formData.dropoffPostcode,
       pickupDate: formData.pickupDate,
       pickupTime: formData.pickupTime,
+      dropoffDate: formData.dropoffDate,
       dropoffTime: formData.dropoffTime,
       passengers: formData.passengers,
       luggage: formData.luggage,
@@ -125,6 +128,7 @@ const Book = () => {
         dropoffPostcode: '',
         pickupDate: '',
         pickupTime: '',
+        dropoffDate: '',
         dropoffTime: '',
         passengers: '1',
         luggage: '1',
@@ -143,9 +147,8 @@ const Book = () => {
       <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-10 md:mb-12 opacity-0 animate-fadeIn">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 sm:mb-6">
-            <span className="text-white">Book Your </span>
-            <span className="text-amber-500">Journey</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6">
+            Book Your Journey
           </h1>
           <p className="text-amber-500/80 text-xs sm:text-sm bg-zinc-900/50 border border-amber-500/30 rounded-lg p-3 sm:p-4 max-w-2xl mx-auto">
             Advance booking is recommended to guarantee availability.
@@ -334,7 +337,25 @@ const Book = () => {
                 )}
               </div>
 
-              <div className="md:col-span-2">
+              <div>
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
+                  Drop-off Date *
+                </label>
+                <input
+                  type="date"
+                  name="dropoffDate"
+                  value={formData.dropoffDate}
+                  onChange={handleChange}
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 bg-black/50 border ${
+                    errors.dropoffDate ? 'border-red-500' : 'border-amber-500/30'
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
+                />
+                {errors.dropoffDate && (
+                  <p className="text-red-500 text-xs mt-1">{errors.dropoffDate}</p>
+                )}
+              </div>
+
+              <div>
                 <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Drop-off Time *
                 </label>

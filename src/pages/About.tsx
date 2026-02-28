@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import PageMeta from '../components/PageMeta';
 import FadeInSection from '../components/FadeInSection';
 import Marquee from '../components/Marquee';
@@ -26,18 +25,34 @@ const testimonials = [
       'From airport pickups to special occasions, Al Safir never disappoints. The attention to detail and the quality of the vehicles is outstanding.',
     initials: 'مس',
   },
+  {
+    name: 'James Wilson',
+    location: 'London, UK',
+    quote:
+      'I have used Al Safir for several Heathrow runs and corporate events. Absolutely first-class—prompt, polished, and the cars are always spotless. Could not ask for better.',
+    initials: 'JW',
+  },
+  {
+    name: 'Sarah Mitchell',
+    location: 'Manchester, UK',
+    quote:
+      'Booked Al Safir for our anniversary dinner in London. From the moment they collected us to the drop-off, everything was seamless. Highly recommend for any special occasion.',
+    initials: 'SM',
+  },
 ];
 
 const About = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const current = testimonials[testimonialIndex];
 
-  const goPrev = () => {
-    setTestimonialIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
-  };
   const goNext = () => {
     setTestimonialIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
   };
+
+  useEffect(() => {
+    const interval = setInterval(goNext, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -45,7 +60,7 @@ const About = () => {
         title="About Us - Al Safir Chauffeurs"
         description="Learn about Al Safir Chauffeurs: London's luxury chauffeur service. Professional, discreet, and reliable transport for airport transfers, corporate travel, and special occasions."
       />
-      <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
+      <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 font-serif">
         <div className="max-w-4xl mx-auto">
           <FadeInSection className="text-center mb-10 sm:mb-12 md:mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-3 sm:mb-4">
@@ -61,11 +76,11 @@ const About = () => {
               Our Story
             </span>
           </div>
-          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 sm:p-8 md:p-10 lg:p-12 hover:border-amber-500/30 transition-all duration-300">
+          <div className="bg-zinc-900/50 border border-amber-500/20 rounded-lg p-6 sm:p-8 md:p-10 lg:p-12 hover:border-amber-500/30 transition-all duration-300 font-cormorant-semibold">
             <h2 className="text-amber-500 text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center mb-4 sm:mb-6">
               Driven by Excellence
             </h2>
-            <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-white/80 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto">
               Al Safir Luxury Chauffeurs is a bespoke chauffeur service created for clients who expect more than transportation - They expect excellence without compromise. We specialise in providing discreet, high-level mobility solutions for executives, high-net-worth individuals, diplomats, and international visitors who require reliability, privacy, and refined comfort at all times.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
@@ -75,7 +90,7 @@ const About = () => {
               Clients can secure a chauffeur and luxury vehicle for a single journey, an entire day, a week, or long-term monthly arrangements. This allows uninterrupted mobility throughout London and the UK, with a dedicated professional who understands schedules, preferences, and expectations.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
-              From airport arrivals to complex multi-stop itineraries, every journey is carefully coordinated. We provide executive airport transfers, private jet terminal collections, corporate transport, lifestyle travel, special events, and long-distance journeys  all delivered with calm professionalism and meticulous attention to detail.
+              From airport arrivals to complex multi-stop itineraries, every journey is carefully coordinated. We provide executive airport transfers, private jet terminal collections, corporate transport, lifestyle travel, special events, and long-distance journeys – all delivered with calm professionalism and meticulous attention to detail.
             </p>
             <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mt-4 sm:mt-6">
               Our fleet represents modern luxury, combining comfort, safety, and presence. Interiors are quiet and refined, creating a private environment where clients can relax, work, or travel without distraction.
@@ -255,23 +270,21 @@ const About = () => {
                 Our clients trust us for airport transfers, corporate travel, and special
                 occasions. Here’s what they have to say about their experience with Al Safir.
               </p>
-              <div className="flex gap-4">
-                <button
-                  type="button"
-                  onClick={goPrev}
-                  aria-label="Previous testimonial"
-                  className="btn-animate w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black shrink-0"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button
-                  type="button"
-                  onClick={goNext}
-                  aria-label="Next testimonial"
-                  className="btn-animate w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black shrink-0"
-                >
-                  <ChevronRight size={24} />
-                </button>
+              <div className="flex gap-2" role="tablist" aria-label="Testimonial indicators">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setTestimonialIndex(i)}
+                    aria-label={`Go to testimonial ${i + 1}`}
+                    aria-selected={testimonialIndex === i}
+                    className={`btn-animate rounded-full transition-all duration-200 ${
+                      testimonialIndex === i
+                        ? 'w-3 h-3 sm:w-3.5 sm:h-3.5 bg-amber-500'
+                        : 'w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/40 hover:bg-white/60'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
 

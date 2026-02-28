@@ -1,24 +1,56 @@
-/* Local fonts from public/banners/Font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700&family=Luxurious+Script&display=swap');
+
+/* Aileron from local fonts folder (public/banners/font) */
 @font-face {
   font-family: 'Aileron';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/banners/Font/aileron.light.otf') format('opentype');
+  src: url('/banners/font/aileron.light.otf') format('opentype');
 }
 @font-face {
   font-family: 'Aileron';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/banners/Font/aileron.regular.otf') format('opentype');
+  src: url('/banners/font/aileron.regular.otf') format('opentype');
 }
+
+/* Cormorant from local fonts folder (public/banners/font/cormorant) */
 @font-face {
-  font-family: 'Alex Brush';
+  font-family: 'Cormorant';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/banners/Font/alex-brush/AlexBrush-Regular.ttf') format('truetype');
+  src: url('/banners/font/cormorant/Cormorant_Install_v0.2/1.%20OpenType%20Font%20Files/Cormorant-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/banners/font/cormorant/Cormorant_Install_v0.2/1.%20OpenType%20Font%20Files/Cormorant-Semi.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/banners/font/cormorant/Cormorant_Install_v0.2/1.%20OpenType%20Font%20Files/Cormorant-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/banners/font/cormorant/Cormorant_Install_v0.2/1.%20OpenType%20Font%20Files/Cormorant-RegularItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/banners/font/cormorant/Cormorant_Install_v0.2/1.%20OpenType%20Font%20Files/Cormorant-SemiItalic.otf') format('opentype');
 }
 
 @tailwind base;
@@ -27,14 +59,14 @@
 
 @layer base {
   body {
-    font-family: 'Aileron', sans-serif;
+    font-family: 'Cormorant', serif;
     background-color: #000000;
     color: #FFFFFF;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Alex Brush', cursive;
+    font-family: 'Cormorant', serif;
   }
 
   html {
@@ -68,15 +100,25 @@ select option {
 
 @layer utilities {
   .font-script {
-    font-family: 'Alex Brush', cursive;
+    font-family: 'Luxurious Script', cursive;
   }
 
   .font-serif {
-    font-family: 'Alex Brush', cursive;
+    font-family: 'Cormorant', serif;
   }
 
   .font-sans {
+    font-family: 'Cormorant', serif;
+  }
+
+  .font-aileron {
     font-family: 'Aileron', sans-serif;
+  }
+
+  /* Force Cormorant Semibold for About and other body copy (avoids fallback serif) */
+  .font-cormorant-semibold {
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
   }
 
   /* Logo tagline: uppercase sans-serif with generous letter spacing */

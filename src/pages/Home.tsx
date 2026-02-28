@@ -125,10 +125,7 @@ const Home = () => {
             <div className="w-full max-w-4xl min-w-0">
               <h1 className={`mb-3 sm:mb-4 font-serif text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider px-2 break-words ${index === 2 ? 'sm:whitespace-nowrap' : ''}`}>
                 {index === 0 ? (
-                  <>
-                    <span className="text-white">Al Safir </span>
-                    <span className="text-amber-500">Chauffeurs</span>
-                  </>
+                  <span className="text-white">Al Safir Chauffeurs</span>
                 ) : (
                   section.title.split(' ').map((word, i) => (
                     <span
@@ -140,21 +137,21 @@ const Home = () => {
                   ))
                 )}
               </h1>
-              <p className={`text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 break-words ${index === 0 ? 'font-serif text-amber-500 font-medium' : 'font-sans text-white/90 font-light'}`}>
+              <p className={`text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 break-words ${index === 0 ? 'font-serif text-amber-500 font-bold' : 'font-sans text-white/90 font-semibold'}`}>
                 {section.subtitle}
               </p>
               {index === 0 && (
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 px-2">
                   <Link
                     to="/book"
-                    className="btn-animate inline-flex items-center justify-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-black font-medium uppercase tracking-logo px-5 sm:px-6 min-h-[48px] py-3 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto"
+                    className="btn-animate inline-flex items-center justify-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase tracking-logo px-5 sm:px-6 min-h-[48px] py-3 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto"
                   >
                     Book Now
                     <ArrowRight size={14} className="shrink-0" />
                   </Link>
                   <Link
                     to="/fleet"
-                    className="btn-animate inline-flex items-center justify-center gap-1.5 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-medium uppercase tracking-logo px-5 sm:px-6 min-h-[48px] py-3 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto"
+                    className="btn-animate inline-flex items-center justify-center gap-1.5 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-bold uppercase tracking-logo px-5 sm:px-6 min-h-[48px] py-3 sm:py-3 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap w-full sm:w-auto"
                   >
                     Fleet
                     <ArrowRight size={14} className="shrink-0" />

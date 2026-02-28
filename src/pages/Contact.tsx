@@ -14,9 +14,8 @@ const Contact = () => {
       <div className="min-h-screen bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <FadeInSection className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 sm:mb-6">
-              <span className="text-white">Contact </span>
-              <span className="text-amber-500">Us</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6">
+              Contact Us
             </h1>
             <p className="text-white/70 text-sm sm:text-base md:text-lg">
               Get in touch with us for bookings and inquiries
@@ -140,7 +139,7 @@ const Contact = () => {
         {/* Ready to Begin Your Journey */}
         <FadeInSection as="section" className="mt-12 sm:mt-16 md:mt-20 lg:mt-28">
           <div className="bg-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 text-white border border-amber-500/30">
-            <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center mb-6 sm:mb-8 md:mb-10 text-white px-2">
+            <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center mb-6 sm:mb-8 md:mb-10 text-amber-500 px-2">
               Ready to Begin Your Journey with Us?
             </h2>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">

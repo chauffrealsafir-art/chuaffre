@@ -54,9 +54,8 @@ const Fleet = () => {
         <div className="max-w-6xl mx-auto">
           {/* Page title - same pattern as About, Contact, Book */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16 opacity-0 animate-fadeIn">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-3 sm:mb-4">
-            <span className="text-white">Our </span>
-            <span className="text-amber-500">Fleet</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-3 sm:mb-4">
+            Our Fleet
           </h1>
           <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Experience luxury and comfort with our meticulously maintained premium vehicle
@@ -135,11 +134,11 @@ const Fleet = () => {
             {filteredFleet.map((vehicle, index) => (
               <article
                 key={vehicle.name}
-                className="bg-[#F7F2E7] border border-amber-700/30 rounded-lg overflow-hidden hover:border-amber-600/50 transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
+                className="bg-[#DDCFB9] border border-amber-700/30 rounded-2xl overflow-hidden hover:border-amber-600/50 transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                <div className="p-4 sm:p-5 md:p-6 pb-0 h-[90px] sm:h-[100px] md:h-[110px] flex flex-col justify-start">
-                  <h3 className="font-serif font-bold text-black text-lg sm:text-xl md:text-2xl leading-tight">
+                <div className="p-4 sm:p-5 md:p-6 pb-0 h-[90px] sm:h-[100px] md:h-[110px] flex flex-col justify-start items-center text-center">
+                  <h3 className="font-serif font-bold text-black text-lg sm:text-xl md:text-2xl leading-tight tabular-nums">
                     {vehicle.name.includes(' (Long') ? (
                       <>
                         {vehicle.name.split(' (Long')[0]}
@@ -150,11 +149,11 @@ const Fleet = () => {
                       vehicle.name
                     )}
                   </h3>
-                  <p className="font-sans text-black/80 text-xs uppercase tracking-logo mt-1">
+                  <p className="font-sans font-bold text-black/80 text-sm sm:text-base uppercase tracking-logo mt-1">
                     {vehicle.category}
                   </p>
                 </div>
-                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 mt-4 overflow-hidden bg-[#F7F2E7] flex-shrink-0">
+                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 mt-4 overflow-hidden bg-[#DDCFB9] flex-shrink-0">
                   <img
                     src={vehicle.image}
                     alt={vehicle.name}

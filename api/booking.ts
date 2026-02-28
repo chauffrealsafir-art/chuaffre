@@ -13,6 +13,7 @@ type BookingPayload = {
   dropoffPostcode: string;
   pickupDate: string;
   pickupTime: string;
+  dropoffDate: string;
   dropoffTime: string;
   passengers: string;
   luggage: string;
@@ -34,6 +35,7 @@ function buildEmailHtml(data: BookingPayload): string {
     <hr />
     <p><strong>Pickup date:</strong> ${escapeHtml(data.pickupDate)}</p>
     <p><strong>Pickup time:</strong> ${escapeHtml(data.pickupTime)}</p>
+    <p><strong>Drop-off date:</strong> ${escapeHtml(data.dropoffDate)}</p>
     <p><strong>Drop-off time:</strong> ${escapeHtml(data.dropoffTime)}</p>
     <hr />
     <p><strong>Passengers:</strong> ${escapeHtml(data.passengers)}</p>

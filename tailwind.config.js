@@ -26,9 +26,9 @@ export default {
         },
       },
       fontFamily: {
-        script: ['Alex Brush', 'cursive'],
-        serif: ['Alex Brush', 'cursive'],
-        sans: ['Aileron', 'sans-serif'],
+        script: ['Luxurious Script', 'cursive'],
+        serif: ['Cormorant', 'serif'],
+        sans: ['Cormorant', 'serif'],
       },
       letterSpacing: {
         'logo': '0.2em',
