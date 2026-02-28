@@ -1,8 +1,7 @@
 /// <reference types="node" />
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 const TO_EMAIL = 'info@alsafirchauffeurs.co.uk';
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 type BookingPayload = {
   fullName: string;
@@ -71,9 +70,14 @@ export default {
       });
     }
 
-    if (!process.env.RESEND_API_KEY) {
+    const host = process.env.SMTP_HOST || 'smtp.hostinger.com';
+    const port = Number(process.env.SMTP_PORT) || 587;
+    const user = process.env.SMTP_USER;
+    const pass = process.env.SMTP_PASS;
+
+    if (!user || !pass) {
       return new Response(
-        JSON.stringify({ error: 'Email service not configured' }),
+        JSON.stringify({ error: 'Email not configured. Set SMTP_USER and SMTP_PASS in Vercel.' }),
         { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
@@ -88,23 +92,21 @@ export default {
       );
     }
 
-    const from = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    const transporter = nodemailer.createTransport({
+      host,
+      port,
+      secure: false,
+      auth: { user, pass },
+    });
 
     try {
-      const { error } = await resend.emails.send({
-        from,
+      await transporter.sendMail({
+        from: `Al Safir Chauffeurs <${user}>`,
         to: TO_EMAIL,
         replyTo: data.email,
         subject: 'New booking request - Al Safir Chauffeurs',
         html: buildEmailHtml(data),
       });
-
-      if (error) {
-        return new Response(
-          JSON.stringify({ error: error.message }),
-          { status: 502, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-        );
-      }
 
       return new Response(
         JSON.stringify({ ok: true }),
