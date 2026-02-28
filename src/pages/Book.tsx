@@ -262,6 +262,42 @@ const Book = () => {
 
               <div>
                 <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
+                  Pickup Date *
+                </label>
+                <input
+                  type="date"
+                  name="pickupDate"
+                  value={formData.pickupDate}
+                  onChange={handleChange}
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 bg-black/50 border ${
+                    errors.pickupDate ? 'border-red-500' : 'border-amber-500/30'
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
+                />
+                {errors.pickupDate && (
+                  <p className="text-red-500 text-xs mt-1">{errors.pickupDate}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
+                  Pickup Time *
+                </label>
+                <input
+                  type="time"
+                  name="pickupTime"
+                  value={formData.pickupTime}
+                  onChange={handleChange}
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 bg-black/50 border ${
+                    errors.pickupTime ? 'border-red-500' : 'border-amber-500/30'
+                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
+                />
+                {errors.pickupTime && (
+                  <p className="text-red-500 text-xs mt-1">{errors.pickupTime}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Drop-off Address *
                 </label>
                 <input
@@ -298,42 +334,6 @@ const Book = () => {
                 )}
               </div>
 
-              <div>
-                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
-                  Pickup Date *
-                </label>
-                <input
-                  type="date"
-                  name="pickupDate"
-                  value={formData.pickupDate}
-                  onChange={handleChange}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
-                    errors.pickupDate ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
-                />
-                {errors.pickupDate && (
-                  <p className="text-red-500 text-xs mt-1">{errors.pickupDate}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
-                  Pickup Time *
-                </label>
-                <input
-                  type="time"
-                  name="pickupTime"
-                  value={formData.pickupTime}
-                  onChange={handleChange}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
-                    errors.pickupTime ? 'border-red-500' : 'border-amber-500/30'
-                  } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
-                />
-                {errors.pickupTime && (
-                  <p className="text-red-500 text-xs mt-1">{errors.pickupTime}</p>
-                )}
-              </div>
-
               <div className="md:col-span-2">
                 <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                   Drop-off Time *
@@ -343,7 +343,7 @@ const Book = () => {
                   name="dropoffTime"
                   value={formData.dropoffTime}
                   onChange={handleChange}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 bg-black/50 border ${
                     errors.dropoffTime ? 'border-red-500' : 'border-amber-500/30'
                   } rounded-lg text-white text-sm sm:text-base focus:outline-none focus:border-amber-500 transition-colors`}
                 />

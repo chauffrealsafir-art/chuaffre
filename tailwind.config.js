@@ -26,9 +26,9 @@ export default {
         },
       },
       fontFamily: {
-        script: ['Luxurious Script', 'cursive'],
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        script: ['Alex Brush', 'cursive'],
+        serif: ['Alex Brush', 'cursive'],
+        sans: ['Aileron', 'sans-serif'],
       },
       letterSpacing: {
         'logo': '0.2em',
