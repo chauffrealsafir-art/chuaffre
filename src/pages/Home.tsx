@@ -11,7 +11,9 @@ const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [exceptionalFleetInView, setExceptionalFleetInView] = useState(false);
   const [hero0Entered, setHero0Entered] = useState(false);
+  const [loadedImageIndices, setLoadedImageIndices] = useState<Set<number>>(() => new Set([0]));
   const exceptionalFleetRef = useRef<HTMLElement | null>(null);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   // When landing on home (navigation or load), scroll to top so entrance animation runs from top
   useEffect(() => {
@@ -53,6 +55,28 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Lazy-load hero images: only load when section is in or near viewport (saves initial load)
+  useEffect(() => {
+    const refs = sectionRefs.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setLoadedImageIndices((prev) => {
+          const next = new Set(prev);
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = Number((entry.target as HTMLElement).dataset.sectionIndex);
+              if (!Number.isNaN(index)) next.add(index);
+            }
+          });
+          return next.size === prev.size ? prev : next;
+        });
+      },
+      { rootMargin: '100px 0px 100px 0px', threshold: 0 }
+    );
+    refs.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const heroSections = [
     {
       image: bannerImages[0],
@@ -76,7 +100,7 @@ const Home = () => {
     },
     {
       image: bannerImages[4],
-      title: 'Al Safir Chauffeurs',
+      title: 'Experience the Difference',
       subtitle: 'Driven By Excellence',
     },
   ];
@@ -84,21 +108,26 @@ const Home = () => {
   return (
     <>
       <PageMeta
-        title="Al Safir Chauffeurs - Driven By Excellence"
+        title="AL Safir Chauffeurs - Driven By Excellence"
         description="London's premier luxury chauffeur service. Professional, discreet, and reliable transport across the capital."
       />
       <div className="bg-black pb-12 sm:pb-16 md:pb-24">
       {heroSections.map((section, index) => (
         <section
           key={index}
-          ref={index === EXCEPTIONAL_FLEET_INDEX ? exceptionalFleetRef : undefined}
+          ref={(el) => {
+            sectionRefs.current[index] = el;
+            if (index === EXCEPTIONAL_FLEET_INDEX && el) exceptionalFleetRef.current = el;
+          }}
+          data-section-index={index}
           className="relative h-screen w-full flex flex-col overflow-hidden -mb-px"
         >
-          {/* Full-screen background image - no black block covering it */}
+          {/* Full-screen background image - lazy-loaded except first */}
           <div
             className="absolute inset-0 bg-cover bg-no-repeat bg-center"
             style={{
-              backgroundImage: `url(${section.image})`,
+              backgroundColor: loadedImageIndices.has(index) ? undefined : '#0a0a0a',
+              backgroundImage: loadedImageIndices.has(index) ? `url(${section.image})` : undefined,
               backgroundPosition: index === 0 ? 'center 75%' : 'center center',
               backgroundSize: 'cover',
             }}
@@ -123,9 +152,9 @@ const Home = () => {
             }`}
           >
             <div className="w-full max-w-4xl min-w-0">
-              <h1 className={`mb-3 sm:mb-4 font-serif text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider px-2 break-words ${index === 2 ? 'sm:whitespace-nowrap' : ''}`}>
+              <h1 className={`mb-3 sm:mb-4 font-serif text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold sm:font-bold text-white tracking-wider px-2 break-words ${index === 2 ? 'sm:whitespace-nowrap' : ''}`}>
                 {index === 0 ? (
-                  <span className="text-white">Al Safir Chauffeurs</span>
+                  <span className="text-white">AL SAFIR CHAUFFEURS</span>
                 ) : (
                   section.title.split(' ').map((word, i) => (
                     <span
@@ -137,7 +166,7 @@ const Home = () => {
                   ))
                 )}
               </h1>
-              <p className={`text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 break-words ${index === 0 ? 'font-serif text-amber-500 font-bold' : 'font-sans text-white/90 font-semibold'}`}>
+              <p className={`text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-tagline px-2 break-words ${index === 0 ? 'font-serif text-amber-500 font-extrabold sm:font-bold' : 'font-sans text-white/90 font-bold sm:font-semibold'}`}>
                 {section.subtitle}
               </p>
               {index === 0 && (
