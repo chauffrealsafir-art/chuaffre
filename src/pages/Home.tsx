@@ -122,16 +122,39 @@ const Home = () => {
           data-section-index={index}
           className="relative h-screen w-full flex flex-col overflow-hidden -mb-px"
         >
-          {/* Full-screen background image - lazy-loaded except first */}
-          <div
-            className="absolute inset-0 bg-cover bg-no-repeat bg-center"
-            style={{
-              backgroundColor: loadedImageIndices.has(index) ? undefined : '#0a0a0a',
-              backgroundImage: loadedImageIndices.has(index) ? `url(${section.image})` : undefined,
-              backgroundPosition: index === 0 ? 'center 75%' : 'center center',
-              backgroundSize: 'cover',
-            }}
-          />
+          {/* Full-screen background image - mobile vs desktop for first hero, lazy-loaded for others */}
+          {index === 0 ? (
+            <>
+              {/* Mobile: dedicated mobile-optimised image */}
+              <div
+                className="absolute inset-0 bg-cover bg-no-repeat bg-center sm:hidden"
+                style={{
+                  backgroundImage: 'url(/banners/1i.png)',
+                  backgroundPosition: 'center 75%',
+                  backgroundSize: 'cover',
+                }}
+              />
+              {/* Desktop / tablet: original 1.png with lazy-loading set already loaded by default */}
+              <div
+                className="absolute inset-0 bg-cover bg-no-repeat bg-center hidden sm:block"
+                style={{
+                  backgroundImage: `url(${section.image})`,
+                  backgroundPosition: 'center 75%',
+                  backgroundSize: 'cover',
+                }}
+              />
+            </>
+          ) : (
+            <div
+              className="absolute inset-0 bg-cover bg-no-repeat bg-center"
+              style={{
+                backgroundColor: loadedImageIndices.has(index) ? undefined : '#0a0a0a',
+                backgroundImage: loadedImageIndices.has(index) ? `url(${section.image})` : undefined,
+                backgroundPosition: 'center center',
+                backgroundSize: 'cover',
+              }}
+            />
+          )}
           {/* Subtle overlay so text stays readable - image still clearly visible */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" aria-hidden />
 

@@ -144,14 +144,14 @@ const Contact = () => {
             </h2>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               <Link
-                to="/fleet"
+                to="/book"
                 className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium uppercase tracking-wide text-white hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto"
               >
-                Our Fleet
+                Book Now
                 <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
               </Link>
               <Link
-                to="/book"
+                to="/fleet"
                 className="btn-animate inline-flex items-center justify-center gap-2 border-2 border-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium uppercase tracking-wide text-white hover:bg-black hover:text-white border-white hover:border-black transition-colors duration-200 w-full sm:w-auto"
               >
                 Browse Fleet

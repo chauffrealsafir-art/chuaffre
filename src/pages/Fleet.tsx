@@ -128,17 +128,17 @@ const Fleet = () => {
           </div>
         </section>
 
-        {/* Vehicle grid - dark theme */}
+        {/* Vehicle grid - dark gradient cards */}
         <section>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {filteredFleet.map((vehicle, index) => (
               <article
                 key={vehicle.name}
-                className="bg-[#DDCFB9] border border-amber-700/30 rounded-2xl overflow-hidden hover:border-amber-600/50 transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
+                className="bg-gradient-to-b from-black via-zinc-900 to-zinc-900 border border-zinc-800/70 hover:border-amber-500/60 rounded-3xl overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.85)] transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="p-4 sm:p-5 md:p-6 pb-0 h-[90px] sm:h-[100px] md:h-[110px] flex flex-col justify-start items-center text-center">
-                  <h3 className="font-serif font-bold text-black text-lg sm:text-xl md:text-2xl leading-tight tabular-nums">
+                  <h3 className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight tabular-nums">
                     {vehicle.name.includes(' (Long') ? (
                       <>
                         {vehicle.name.split(' (Long')[0]}
@@ -149,21 +149,21 @@ const Fleet = () => {
                       vehicle.name
                     )}
                   </h3>
-                  <p className="font-sans font-bold text-black/80 text-sm sm:text-base uppercase tracking-logo mt-1">
+                  <p className="font-sans font-bold text-amber-400 text-sm sm:text-base uppercase tracking-logo mt-1">
                     {vehicle.category}
                   </p>
                 </div>
-                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 mt-4 overflow-hidden bg-[#DDCFB9] flex-shrink-0">
+                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 mt-2 sm:mt-3 overflow-hidden flex-shrink-0">
                   <img
                     src={vehicle.image}
                     alt={vehicle.name}
-                    className="w-full h-full object-contain object-center"
+                    className="w-full h-full object-contain object-center drop-shadow-[0_18px_40px_rgba(0,0,0,0.9)]"
                   />
                 </div>
-                <div className="p-4 sm:p-5 md:p-6 pt-3 sm:pt-4">
+                <div className="p-4 sm:p-5 md:p-6 pt-4 sm:pt-5">
                   <Link
                     to={`/book?vehicle=${encodeURIComponent(vehicle.name)}`}
-                    className="btn-animate flex items-center justify-center gap-2 w-full bg-black border-2 border-black text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium uppercase tracking-logo transition-colors"
+                    className="btn-animate flex items-center justify-center gap-2 w-full bg-gradient-to-r from-zinc-900 via-zinc-800 to-black text-zinc-100 hover:from-amber-500 hover:via-amber-500 hover:to-amber-500 hover:text-black border border-zinc-800/80 hover:border-amber-500 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium uppercase tracking-logo transition-colors"
                   >
                     Request a quote
                     <ArrowRight size={14} className="sm:w-4 sm:h-4" />
